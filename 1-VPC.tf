@@ -1,10 +1,10 @@
 # this  makes  vpc.id which is aws_vpc.app1.id
-resource "aws_vpc" "app1" {
-  cidr_block = "10.32.0.0/16"
+resource "aws_vpc" "TMMC-Tokyo" {
+  cidr_block = "10.80.0.0/16"
 
   tags = {
-    Name = "app1"
-    Service = "application1"
+    Name = "Hungry Wolves"
+    Service = "J-Teledoctor"
     Owner = "Chewbacca"
     Planet = "Mustafar"
   }

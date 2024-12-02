@@ -70,5 +70,5 @@ resource "aws_autoscaling_policy" "app1_scaling_policy" {
 # Enabling instance scale-in protection
 resource "aws_autoscaling_attachment" "app1_asg_attachment" {
   autoscaling_group_name = aws_autoscaling_group.app1_asg.name
-  alb_target_group_arn   = aws_lb_target_group.app1_tg.arn
+  alb_target_group_arn = aws_lb_target_group.app1_tg.arn
 }
