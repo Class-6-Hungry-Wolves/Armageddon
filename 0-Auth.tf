@@ -1,3 +1,5 @@
+# These are the providers and the regions we are using to expand Tokyo Midtown Medical Center's 
+# services worldwide 
 provider "aws" {
   region = "ap-northeast-1"
   alias = "Tokyo"
@@ -18,7 +20,7 @@ provider "aws" {
 }
 
 provider "aws" {
-  region = "us-west-2"
+  region = "us-west-1"
   alias = "California"
 }
 
