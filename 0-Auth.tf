@@ -3,10 +3,10 @@ provider "aws" {
   alias = "Tokyo"
 }
 
-provider "aws" {
-  region = "ap-east-1"
-  alias = "Hong-Kong"
-}
+# provider "aws" {
+#   region = "ap-east-1"
+#   alias = "Hong-Kong"
+# }
 provider "aws" {
   region = "eu-west-2"
   alias = "London"
