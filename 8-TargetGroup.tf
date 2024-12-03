@@ -1,10 +1,10 @@
 # Tokyo Target Group
 resource "aws_lb_target_group" "Tokyo-TG-80" {
-  name     = "Tokyo-TG-80"
-  port     = 80
-  protocol = "HTTP"
-  vpc_id   = aws_vpc.TMMC-Tokyo.id
-  target_type = "instance"
+  name          = "Tokyo-TG-80"
+  port          = 80
+  protocol      = "HTTP"
+  vpc_id        = aws_vpc.TMMC-Tokyo.id
+  target_type   = "instance"
 
   health_check {
     enabled             = true
@@ -18,7 +18,7 @@ resource "aws_lb_target_group" "Tokyo-TG-80" {
   }
 
   tags = {
-    Name    = "Tokyo-TG-80"
+    Name        = "Tokyo-TG-80"
     Service     = "Target Group Port 80"
     Owner       = "alex"
     Team        = "HungryWolves"
@@ -28,11 +28,11 @@ resource "aws_lb_target_group" "Tokyo-TG-80" {
 
 # Hong Kong Target Group
 resource "aws_lb_target_group" "Hong-Kong-TG-80" {
-  name     = "Hong-Kong-TG-80"
-  port     = 80
-  protocol = "HTTP"
-  vpc_id   = aws_vpc.TMMC-Hong-Kong.id
-  target_type = "instance"
+  name          = "Hong-Kong-TG-80"
+  port          = 80
+  protocol      = "HTTP"
+  vpc_id        = aws_vpc.TMMC-Hong-Kong.id
+  target_type   = "instance"
 
   health_check {
     enabled             = true
@@ -46,7 +46,7 @@ resource "aws_lb_target_group" "Hong-Kong-TG-80" {
   }
 
   tags = {
-    Name    = "Hong-Kong-TG-80"
+    Name        = "Hong-Kong-TG-80"
     Service     = "Target Group Port 80"
     Owner       = "alex"
     Team        = "HungryWolves"
@@ -56,11 +56,11 @@ resource "aws_lb_target_group" "Hong-Kong-TG-80" {
 
 # San Paulo Target Group
 resource "aws_lb_target_group" "Sao-Paulo-TG-80" {
-  name     = "Sao-Paulo-TG-80"
-  port     = 80
-  protocol = "HTTP"
-  vpc_id   = aws_vpc.TMMC-San-Paulo.id
-  target_type = "instance"
+  name          = "Sao-Paulo-TG-80"
+  port          = 80
+  protocol      = "HTTP"
+  vpc_id        = aws_vpc.TMMC-San-Paulo.id
+  target_type   = "instance"
 
   health_check {
     enabled             = true
@@ -74,7 +74,7 @@ resource "aws_lb_target_group" "Sao-Paulo-TG-80" {
   }
 
   tags = {
-    Name    = "Sao-Paulo-TG-80"
+    Name        = "Sao-Paulo-TG-80"
     Service     = "Target Group 80"
     Owner       = "alex"
     Team        = "HungryWolves"
@@ -84,11 +84,11 @@ resource "aws_lb_target_group" "Sao-Paulo-TG-80" {
 
 # London Target Group
 resource "aws_lb_target_group" "London-TG-80" {
-  name     = "London-TG-80"
-  port     = 80
-  protocol = "HTTP"
-  vpc_id   = aws_vpc.TMMC-London.id
-  target_type = "instance"
+  name          = "London-TG-80"
+  port          = 80
+  protocol      = "HTTP"
+  vpc_id        = aws_vpc.TMMC-London.id
+  target_type   = "instance"
 
   health_check {
     enabled             = true
@@ -102,7 +102,7 @@ resource "aws_lb_target_group" "London-TG-80" {
   }
 
   tags = {
-    Name    = "London-TG-80"
+    Name        = "London-TG-80"
     Service     = "Target Group Port 80"
     Owner       = "alex"
     Team        = "HungryWolves"
@@ -112,11 +112,11 @@ resource "aws_lb_target_group" "London-TG-80" {
 
 # California Target Group
 resource "aws_lb_target_group" "California-TG-80" {
-  name     = "California-TG-80"
-  port     = 80
-  protocol = "HTTP"
-  vpc_id   = aws_vpc.TMMC-California.id
-  target_type = "instance"
+  name          = "California-TG-80"
+  port          = 80
+  protocol      = "HTTP"
+  vpc_id        = aws_vpc.TMMC-California.id
+  target_type   = "instance"
 
   health_check {
     enabled             = true
@@ -130,7 +130,7 @@ resource "aws_lb_target_group" "California-TG-80" {
   }
 
   tags = {
-    Name    = "California-TG-80"
+    Name        = "California-TG-80"
     Service     = "Target Group Port 80"
     Owner       = "alex"
     Team        = "HungryWolves"
@@ -140,11 +140,11 @@ resource "aws_lb_target_group" "California-TG-80" {
 
 # Australia Target Group
 resource "aws_lb_target_group" "Australia-TG-80" {
-  name     = "Australia-TG-80"
-  port     = 80
-  protocol = "HTTP"
-  vpc_id   = aws_vpc.TMMC-Australia.id
-  target_type = "instance"
+  name          = "Australia-TG-80"
+  port          = 80
+  protocol      = "HTTP"
+  vpc_id        = aws_vpc.TMMC-Australia.id
+  target_type   = "instance"
 
   health_check {
     enabled             = true
@@ -158,7 +158,7 @@ resource "aws_lb_target_group" "Australia-TG-80" {
   }
 
   tags = {
-    Name    = "Australia-TG-80"
+    Name        = "Australia-TG-80"
     Service     = "Target Group Port 80"
     Owner       = "alex"
     Team        = "HungryWolves"
@@ -168,11 +168,11 @@ resource "aws_lb_target_group" "Australia-TG-80" {
 
 # New-York Target Group
 resource "aws_lb_target_group" "New-York-TG-80" {
-  name     = "New-York-TG-80"
-  port     = 80
-  protocol = "HTTP"
-  vpc_id   = aws_vpc.TMMC-New-York.id
-  target_type = "instance"
+  name          = "New-York-TG-80"
+  port          = 80
+  protocol      = "HTTP"
+  vpc_id        = aws_vpc.TMMC-New-York.id
+  target_type   = "instance"
 
   health_check {
     enabled             = true
@@ -186,7 +186,7 @@ resource "aws_lb_target_group" "New-York-TG-80" {
   }
 
   tags = {
-    Name    = "New-York-TG-80"
+    Name        = "New-York-TG-80"
     Service     = "Target Group Port 80"
     Owner       = "alex"
     Team        = "HungryWolves"
