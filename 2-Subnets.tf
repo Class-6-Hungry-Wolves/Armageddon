@@ -176,7 +176,7 @@ resource "aws_subnet" "public-ap-southeast-2b" {
   provider = aws.Australia
   vpc_id                  = aws_vpc.TMMC-Australia.id
   cidr_block              = "10.85.2.0/24"
-  availability_zone       = "ap-southeast-2a"
+  availability_zone       = "ap-southeast-2b"
   map_public_ip_on_launch = true
 
   tags = {
@@ -389,7 +389,7 @@ resource "aws_subnet" "private-ap-southeast-2b" {
   provider = aws.Australia
   vpc_id            = aws_vpc.TMMC-Australia.id
   cidr_block        = "10.85.12.0/24"
-  availability_zone = "ap-southeast-2a"
+  availability_zone = "ap-southeast-2b"
 
   tags = {
     Name    = "TMMC-Australia-private-2b"
@@ -419,7 +419,7 @@ resource "aws_subnet" "private-us-east-1b" {
   provider = aws.New-York
   vpc_id            = aws_vpc.TMMC-New-York.id
   cidr_block        = "10.86.12.0/24"
-  availability_zone = "us-east-1a"
+  availability_zone = "us-east-1b"
 
   tags = {
     Name    = "TMMC-New-York-private-1b"
