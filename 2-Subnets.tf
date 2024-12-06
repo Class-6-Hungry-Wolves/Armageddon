@@ -299,7 +299,7 @@ resource "aws_subnet" "private-eu-west-2b" {
   provider = aws.London
   vpc_id            = aws_vpc.TMMC-London.id
   cidr_block        = "10.82.12.0/24"
-  availability_zone = "eu-west-2a"
+  availability_zone = "eu-west-2b"
 
   tags = {
     Name    = "TMMC-London-private-2b"
