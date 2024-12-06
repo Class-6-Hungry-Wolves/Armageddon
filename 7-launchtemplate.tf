@@ -1,6 +1,7 @@
 # Hong Kong Launch Template
 
 resource "aws_launch_template" "Hong-Kong-LT" {
+  provider = aws.Hong-Kong
   name_prefix   = "Hong-Kong-LT"
   image_id      = "ami-06f707739f2271995"  
   instance_type = "t2.micro"
@@ -74,13 +75,14 @@ resource "aws_launch_template" "Hong-Kong-LT" {
 # New York Launch Template
 
 resource "aws_launch_template" "New-York-LT" {
+  provider   = aws.New-York
   name_prefix   = "New-York-LT"
   image_id      = "ami-0453ec754f44f9a4a"  
   instance_type = "t2.micro"
 
   key_name = "Key-New-York"
 
-  vpc_security_group_ids = [aws_security_group.TMMC-New-York-LT-sg01-servers.id]
+  vpc_security_group_ids = [aws_security_group.TMMC-New-York-sg01-servers.id]
 
   user_data = base64encode(<<-EOF
     #!/bin/bash
@@ -146,13 +148,14 @@ resource "aws_launch_template" "New-York-LT" {
 
 # London Launch Template
 resource "aws_launch_template" "London-LT" {
+  provider    = aws.London
   name_prefix   = "London-LT"
   image_id      = "ami-0c76bd4bd302b30ec"  
   instance_type = "t2.micro"
 
   key_name = "Key-London"
 
-  vpc_security_group_ids = [aws_security_group.TMMC-London-LT-sg01-servers.id]
+  vpc_security_group_ids = [aws_security_group.TMMC-London-sg01-servers.id]
 
   user_data = base64encode(<<-EOF
     #!/bin/bash
@@ -218,13 +221,14 @@ resource "aws_launch_template" "London-LT" {
 
 # Australia Launch Template
 resource "aws_launch_template" "Australia-LT" {
+  provider    = aws.Australia
   name_prefix   = "Australia-LT"
   image_id      = "ami-0146fc9ad419e2cfd"  
   instance_type = "t2.micro"
 
   key_name = "Key-Australia"
 
-  vpc_security_group_ids = [aws_security_group.TMMC-Australia-LT-sg01-servers.id]
+  vpc_security_group_ids = [aws_security_group.TMMC-Australia-sg01-servers.id]
 
   user_data = base64encode(<<-EOF
     #!/bin/bash
@@ -290,13 +294,14 @@ resource "aws_launch_template" "Australia-LT" {
 
 # California Launch Template
 resource "aws_launch_template" "California-LT" {
+  provider    = aws.California   
   name_prefix   = "California-LT"
   image_id      = "ami-038bba9a164eb3dc1"  
   instance_type = "t2.micro"
 
   key_name = "Key-California"
 
-  vpc_security_group_ids = [aws_security_group.TMMC-California-LT-sg01-servers.id]
+  vpc_security_group_ids = [aws_security_group.TMMC-California-sg01-servers.id]
 
   user_data = base64encode(<<-EOF
     #!/bin/bash
@@ -362,13 +367,14 @@ resource "aws_launch_template" "California-LT" {
 
 # Sao Paulo Launch Template
 resource "aws_launch_template" "Sao-Paulo-LT" {
+  provider    = aws.Sao-Paulo
   name_prefix   = "Sao-Paulo-LT"
   image_id      = "ami-0c820c196a818d66a"  
   instance_type = "t2.micro"
 
   key_name = "Key-Sao Paulo"
 
-  vpc_security_group_ids = [aws_security_group.TMMC-Sao-Paulo-LT-sg01-servers.id]
+  vpc_security_group_ids = [aws_security_group.TMMC-Sao-Paulo-sg01-servers.id]
 
   user_data = base64encode(<<-EOF
     #!/bin/bash
@@ -434,13 +440,14 @@ resource "aws_launch_template" "Sao-Paulo-LT" {
 
 # Tokyo Launch Template
 resource "aws_launch_template" "Tokyo-LT" {
+  provider    = aws.Tokyo
   name_prefix   = "Tokyo-LT"
   image_id      = "ami-0e577819b2a6cc996"  
   instance_type = "t2.micro"
 
   key_name = "Key-Tokyo"
 
-  vpc_security_group_ids = [aws_security_group.TMMC-Tokyo-LT-sg01-servers.id]
+  vpc_security_group_ids = [aws_security_group.TMMC-Tokyo-sg01-servers.id]
 
   user_data = base64encode(<<-EOF
     #!/bin/bash

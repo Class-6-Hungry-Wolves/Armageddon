@@ -1,5 +1,6 @@
 # Tokyo Target Group
 resource "aws_lb_target_group" "Tokyo-TG-80" {
+  provider    = aws.Tokyo
   name          = "Tokyo-TG-80"
   port          = 80
   protocol      = "HTTP"
@@ -28,6 +29,7 @@ resource "aws_lb_target_group" "Tokyo-TG-80" {
 
 # Hong Kong Target Group
 resource "aws_lb_target_group" "Hong-Kong-TG-80" {
+  provider    = aws.Hong-Kong
   name          = "Hong-Kong-TG-80"
   port          = 80
   protocol      = "HTTP"
@@ -56,10 +58,11 @@ resource "aws_lb_target_group" "Hong-Kong-TG-80" {
 
 # San Paulo Target Group
 resource "aws_lb_target_group" "Sao-Paulo-TG-80" {
+  provider    = aws.Sao-Paulo
   name          = "Sao-Paulo-TG-80"
   port          = 80
   protocol      = "HTTP"
-  vpc_id        = aws_vpc.TMMC-San-Paulo.id
+  vpc_id        = aws_vpc.TMMC-Sao-Paulo.id
   target_type   = "instance"
 
   health_check {
@@ -84,6 +87,7 @@ resource "aws_lb_target_group" "Sao-Paulo-TG-80" {
 
 # London Target Group
 resource "aws_lb_target_group" "London-TG-80" {
+  provider    = aws.London
   name          = "London-TG-80"
   port          = 80
   protocol      = "HTTP"
@@ -112,6 +116,7 @@ resource "aws_lb_target_group" "London-TG-80" {
 
 # California Target Group
 resource "aws_lb_target_group" "California-TG-80" {
+  provider    = aws.California
   name          = "California-TG-80"
   port          = 80
   protocol      = "HTTP"
@@ -140,6 +145,7 @@ resource "aws_lb_target_group" "California-TG-80" {
 
 # Australia Target Group
 resource "aws_lb_target_group" "Australia-TG-80" {
+  provider    = aws.Australia
   name          = "Australia-TG-80"
   port          = 80
   protocol      = "HTTP"
@@ -168,6 +174,7 @@ resource "aws_lb_target_group" "Australia-TG-80" {
 
 # New-York Target Group
 resource "aws_lb_target_group" "New-York-TG-80" {
+  provider    = aws.New-York
   name          = "New-York-TG-80"
   port          = 80
   protocol      = "HTTP"

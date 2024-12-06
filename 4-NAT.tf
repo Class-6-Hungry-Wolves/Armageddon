@@ -1,5 +1,6 @@
 # Hong Kong NAT
 resource "aws_eip" "Hong-Kong-NAT" {
+  provider = aws.Hong-Kong  
   vpc = true
 
   tags = {
@@ -12,6 +13,7 @@ resource "aws_eip" "Hong-Kong-NAT" {
 }
 
 resource "aws_nat_gateway" "Hong-Kong-NAT" {
+  provider = aws.Hong-Kong  
   allocation_id = aws_eip.Hong-Kong-NAT.id
   subnet_id     = aws_subnet.public-ap-east-1a.id
 
@@ -28,6 +30,7 @@ resource "aws_nat_gateway" "Hong-Kong-NAT" {
 
 # Sao Paulo NAT
 resource "aws_eip" "Sao-Paulo-NAT" {
+  provider   = aws.Sao-Paulo  
   vpc = true
 
   tags = {
@@ -40,6 +43,7 @@ resource "aws_eip" "Sao-Paulo-NAT" {
 }
 
 resource "aws_nat_gateway" "Sao-Paulo-NAT" {
+  provider   = aws.Sao-Paulo  
   allocation_id = aws_eip.Sao-Paulo-NAT.id
   subnet_id     = aws_subnet.public-sa-east-1a.id
 
@@ -56,6 +60,7 @@ resource "aws_nat_gateway" "Sao-Paulo-NAT" {
 
 # New York NAT
 resource "aws_eip" "New-York-NAT" {
+  provider   = aws.New-York  
   vpc = true
 
   tags = {
@@ -68,6 +73,7 @@ resource "aws_eip" "New-York-NAT" {
 }
 
 resource "aws_nat_gateway" "New-York-NAT" {
+  provider   = aws.New-York  
   allocation_id = aws_eip.New-York-NAT.id
   subnet_id     = aws_subnet.public-us-east-1a.id
 
@@ -84,6 +90,7 @@ resource "aws_nat_gateway" "New-York-NAT" {
 
 # London NAT
 resource "aws_eip" "London-NAT" {
+  provider    = aws.London  
   vpc = true
 
   tags = {
@@ -96,6 +103,7 @@ resource "aws_eip" "London-NAT" {
 }
 
 resource "aws_nat_gateway" "London-NAT" {
+  provider    = aws.London  
   allocation_id = aws_eip.London-NAT.id
   subnet_id     = aws_subnet.public-eu-west-2a.id
 
@@ -112,6 +120,7 @@ resource "aws_nat_gateway" "London-NAT" {
 
 # Australia NAT
 resource "aws_eip" "Australia-NAT" {
+  provider   = aws.Australia  
   vpc = true
 
   tags = {
@@ -124,6 +133,7 @@ resource "aws_eip" "Australia-NAT" {
 }
 
 resource "aws_nat_gateway" "Australia-NAT" {
+  provider   = aws.Australia  
   allocation_id = aws_eip.Australia-NAT.id
   subnet_id     = aws_subnet.public-ap-southeast-2a.id
 
@@ -140,6 +150,7 @@ resource "aws_nat_gateway" "Australia-NAT" {
 
 # California NAT
 resource "aws_eip" "California-NAT" {
+  provider   = aws.California  
   vpc = true
 
   tags = {
@@ -152,6 +163,7 @@ resource "aws_eip" "California-NAT" {
 }
 
 resource "aws_nat_gateway" "California-NAT" {
+  provider   = aws.California  
   allocation_id = aws_eip.California-NAT.id
   subnet_id     = aws_subnet.public-us-west-1a.id
 
@@ -168,6 +180,7 @@ resource "aws_nat_gateway" "California-NAT" {
 
 # Tokyo NAT
 resource "aws_eip" "Tokyo-NAT" {
+  provider = aws.Tokyo  
   vpc = true
 
   tags = {
@@ -180,6 +193,7 @@ resource "aws_eip" "Tokyo-NAT" {
 }
 
 resource "aws_nat_gateway" "Tokyo-NAT" {
+  provider = aws.Tokyo  
   allocation_id = aws_eip.Tokyo-NAT.id
   subnet_id     = aws_subnet.public-ap-northeast-1a.id
 
