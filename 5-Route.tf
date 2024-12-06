@@ -323,7 +323,6 @@ resource "aws_route_table" "Sao-Paulo-public-rtb" {
       carrier_gateway_id         = ""
       destination_prefix_list_id = ""
       egress_only_gateway_id     = ""
-      gateway_id                 = ""
       instance_id                = ""
       ipv6_cidr_block            = ""
       local_gateway_id           = ""
