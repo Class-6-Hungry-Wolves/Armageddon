@@ -2,8 +2,8 @@
 #private
 
 resource "aws_route_table" "Tokyo-private-rtb" {
-provider = aws.Tokyo
-  vpc_id = aws_vpc.TMMC-Tokyo.id
+  provider = aws.Tokyo
+  vpc_id   = aws_vpc.TMMC-Tokyo.id
 
   route = [
     {
@@ -24,7 +24,7 @@ provider = aws.Tokyo
 
 
     },
-]
+  ]
 
   tags = {
     Name = "TMMC-Tokyo-private"
@@ -36,7 +36,7 @@ provider = aws.Tokyo
 
 resource "aws_route_table" "Tokyo-public-rtb" {
   provider = aws.Tokyo
-  vpc_id = aws_vpc.TMMC-Tokyo.id
+  vpc_id   = aws_vpc.TMMC-Tokyo.id
 
   route = [
     {
@@ -66,35 +66,39 @@ resource "aws_route_table" "Tokyo-public-rtb" {
 
 
 resource "aws_route_table_association" "private-ap-northeast-1a" {
+  provider       = aws.Tokyo
   subnet_id      = aws_subnet.private-ap-northeast-1a.id
   route_table_id = aws_route_table.Tokyo-private-rtb.id
-  }
+}
 
 resource "aws_route_table_association" "private-ap-northeast-1c" {
+  provider       = aws.Tokyo
   subnet_id      = aws_subnet.private-ap-northeast-1c.id
   route_table_id = aws_route_table.Tokyo-private-rtb.id
-  }
- # public
+}
+# public
 
 resource "aws_route_table_association" "public-ap-northeast-1a" {
+  provider       = aws.Tokyo
   subnet_id      = aws_subnet.public-ap-northeast-1a.id
   route_table_id = aws_route_table.Tokyo-public-rtb.id
-  }
+}
 
 resource "aws_route_table_association" "public-ap-northeast-1c" {
+  provider       = aws.Tokyo
   subnet_id      = aws_subnet.public-ap-northeast-1c.id
   route_table_id = aws_route_table.Tokyo-public-rtb.id
-  }
+}
 
 
 
 
 #Hong Kong
- #private
+#private
 
 resource "aws_route_table" "Hong-Kong-private-rtb" {
   provider = aws.Hong-Kong
-  vpc_id = aws_vpc.TMMC-Hong-Kong.id
+  vpc_id   = aws_vpc.TMMC-Hong-Kong.id
 
 
 
@@ -122,11 +126,11 @@ resource "aws_route_table" "Hong-Kong-private-rtb" {
 }
 
 #Hong Kong
- #public
+#public
 
 resource "aws_route_table" "Hong-Kong-public-rtb" {
   provider = aws.Hong-Kong
-  vpc_id = aws_vpc.TMMC-Hong-Kong.id
+  vpc_id   = aws_vpc.TMMC-Hong-Kong.id
 
   route = [
     {
@@ -151,37 +155,41 @@ resource "aws_route_table" "Hong-Kong-public-rtb" {
   }
 }
 
- #Hong Kong
-  #private
+#Hong Kong
+#private
 
 resource "aws_route_table_association" "private-ap-east-1a" {
+  provider       = aws.Hong-Kong
   subnet_id      = aws_subnet.private-ap-east-1a.id
-  route_table_id = aws_route_table.Hong-Kong-private-rtb.id 
-  }
+  route_table_id = aws_route_table.Hong-Kong-private-rtb.id
+}
 
 resource "aws_route_table_association" "private-ap-east-1b" {
+  provider       = aws.Hong-Kong
   subnet_id      = aws_subnet.private-ap-east-1b.id
   route_table_id = aws_route_table.Hong-Kong-private-rtb.id
-  }
+}
 # public
 
 resource "aws_route_table_association" "public-ap-east-1a" {
+  provider       = aws.Hong-Kong
   subnet_id      = aws_subnet.public-ap-east-1a.id
   route_table_id = aws_route_table.Hong-Kong-public-rtb.id
 }
 
-  resource "aws_route_table_association" "public-ap-east-1b" {
+resource "aws_route_table_association" "public-ap-east-1b" {
+  provider       = aws.Hong-Kong
   subnet_id      = aws_subnet.public-ap-east-1b.id
-  route_table_id = aws_route_table.Hong-Kong-public-rtb.id 
+  route_table_id = aws_route_table.Hong-Kong-public-rtb.id
 }
 
 
 #London
- #private
+#private
 
 resource "aws_route_table" "London-private-rtb" {
   provider = aws.London
-  vpc_id = aws_vpc.TMMC-London.id
+  vpc_id   = aws_vpc.TMMC-London.id
 
   route = [
     {
@@ -201,16 +209,16 @@ resource "aws_route_table" "London-private-rtb" {
     },
   ]
   tags = {
- Name = "TMMC-London-private"
+    Name = "TMMC-London-private"
   }
 }
 
 #London
- #public
+#public
 
 resource "aws_route_table" "London-public-rtb" {
-    provider = aws.London
-    vpc_id = aws_vpc.TMMC-London.id
+  provider = aws.London
+  vpc_id   = aws_vpc.TMMC-London.id
 
   route = [
     {
@@ -235,29 +243,33 @@ resource "aws_route_table" "London-public-rtb" {
   }
 }
 
- #London
+#London
 
-  # #private
+# #private
 
 resource "aws_route_table_association" "private-eu-west-2a" {
+  provider       = aws.London
   subnet_id      = aws_subnet.private-eu-west-2a.id
   route_table_id = aws_route_table.London-private-rtb.id
 }
 
 resource "aws_route_table_association" "private-eu-west-2b" {
+  provider       = aws.London
   subnet_id      = aws_subnet.private-eu-west-2b.id
   route_table_id = aws_route_table.London-private-rtb.id
 }
 #London public
 
- 
 
- resource "aws_route_table_association" "public-eu-west-2a" {
- subnet_id      = aws_subnet.public-eu-west-2a.id
- route_table_id = aws_route_table.London-public-rtb.id
+
+resource "aws_route_table_association" "public-eu-west-2a" {
+  provider       = aws.London
+  subnet_id      = aws_subnet.public-eu-west-2a.id
+  route_table_id = aws_route_table.London-public-rtb.id
 }
 
 resource "aws_route_table_association" "public-eu-west-2b" {
+  provider       = aws.London
   subnet_id      = aws_subnet.public-eu-west-2b.id
   route_table_id = aws_route_table.London-public-rtb.id
 }
@@ -267,11 +279,11 @@ resource "aws_route_table_association" "public-eu-west-2b" {
 
 #Sao-Paulo
 
- #private
+#private
 
 resource "aws_route_table" "Sao-Paulo-private-rtb" {
   provider = aws.Sao-Paulo
-  vpc_id = aws_vpc.TMMC-Sao-Paulo.id
+  vpc_id   = aws_vpc.TMMC-Sao-Paulo.id
 
   route = [
     {
@@ -301,7 +313,7 @@ resource "aws_route_table" "Sao-Paulo-private-rtb" {
 
 resource "aws_route_table" "Sao-Paulo-public-rtb" {
   provider = aws.Sao-Paulo
-  vpc_id = aws_vpc.TMMC-Sao-Paulo.id
+  vpc_id   = aws_vpc.TMMC-Sao-Paulo.id
 
   route = [
     {
@@ -332,25 +344,29 @@ resource "aws_route_table" "Sao-Paulo-public-rtb" {
 
 # Sao Paulo
 
- #private
+#private
 
 resource "aws_route_table_association" "private-sa-east-1a" {
+  provider       = aws.Sao-Paulo
   subnet_id      = aws_subnet.private-sa-east-1a.id
   route_table_id = aws_route_table.Sao-Paulo-private-rtb.id
 }
 
 resource "aws_route_table_association" "private-sa-east-1c" {
+  provider       = aws.Sao-Paulo
   subnet_id      = aws_subnet.private-sa-east-1c.id
   route_table_id = aws_route_table.Sao-Paulo-private-rtb.id
 }
-  #public
+#public
 
 resource "aws_route_table_association" "public-sa-east-1a" {
+  provider       = aws.Sao-Paulo
   subnet_id      = aws_subnet.public-sa-east-1a.id
   route_table_id = aws_route_table.Sao-Paulo-public-rtb.id
 }
 
 resource "aws_route_table_association" "public-sa-east-1c" {
+  provider       = aws.Sao-Paulo
   subnet_id      = aws_subnet.public-sa-east-1c.id
   route_table_id = aws_route_table.Sao-Paulo-public-rtb.id
 }
@@ -360,7 +376,7 @@ resource "aws_route_table_association" "public-sa-east-1c" {
 
 resource "aws_route_table" "California-private-rtb" {
   provider = aws.California
-  vpc_id = aws_vpc.TMMC-California.id
+  vpc_id   = aws_vpc.TMMC-California.id
 
   route = [
     {
@@ -387,7 +403,7 @@ resource "aws_route_table" "California-private-rtb" {
 
 resource "aws_route_table" "California-public-rtb" {
   provider = aws.California
-  vpc_id = aws_vpc.TMMC-California.id
+  vpc_id   = aws_vpc.TMMC-California.id
 
   route = [
     {
@@ -411,34 +427,38 @@ resource "aws_route_table" "California-public-rtb" {
     Name = "TMMC-California-public"
   }
 }
- # California
+# California
 
- # private
- resource "aws_route_table_association" "private-us-west-1a" {
+# private
+resource "aws_route_table_association" "private-us-west-1a" {
+  provider       = aws.California
   subnet_id      = aws_subnet.private-us-west-1a.id
   route_table_id = aws_route_table.California-private-rtb.id
 }
 
 resource "aws_route_table_association" "private-us-west-1b" {
+  provider       = aws.California
   subnet_id      = aws_subnet.private-us-west-1b.id
   route_table_id = aws_route_table.California-private-rtb.id
 }
 
-   #public
+#public
 
-  resource "aws_route_table_association" "public-us-west-1a" {
+resource "aws_route_table_association" "public-us-west-1a" {
+  provider       = aws.California
   subnet_id      = aws_subnet.public-us-west-1a.id
   route_table_id = aws_route_table.California-public-rtb.id
 }
 
- resource "aws_route_table_association" "public-us-west-1b" {
+resource "aws_route_table_association" "public-us-west-1b" {
+  provider       = aws.California
   subnet_id      = aws_subnet.public-us-west-1b.id
   route_table_id = aws_route_table.California-public-rtb.id
 }
 
 resource "aws_route_table" "Australia-private-rtb" {
   provider = aws.Australia
-  vpc_id = aws_vpc.TMMC-Australia.id
+  vpc_id   = aws_vpc.TMMC-Australia.id
 
   route = [
     {
@@ -465,7 +485,7 @@ resource "aws_route_table" "Australia-private-rtb" {
 
 resource "aws_route_table" "Australia-public-rtb" {
   provider = aws.Australia
-  vpc_id = aws_vpc.TMMC-Australia.id
+  vpc_id   = aws_vpc.TMMC-Australia.id
 
   route = [
     {
@@ -490,27 +510,31 @@ resource "aws_route_table" "Australia-public-rtb" {
   }
 }
 
- # Australia
+# Australia
 
- # private
+# private
 
 resource "aws_route_table_association" "private-ap-southeast-2a" {
+  provider       = aws.Australia
   subnet_id      = aws_subnet.private-ap-southeast-2a.id
   route_table_id = aws_route_table.Australia-private-rtb.id
-  }
+}
 
- resource "aws_route_table_association" "private-ap-southeast-2b" {
+resource "aws_route_table_association" "private-ap-southeast-2b" {
+  provider       = aws.Australia
   subnet_id      = aws_subnet.private-ap-southeast-2b.id
   route_table_id = aws_route_table.Australia-private-rtb.id
-  }
- # public
+}
+# public
 
 resource "aws_route_table_association" "public-ap-southeast-2a" {
+  provider       = aws.Australia
   subnet_id      = aws_subnet.public-ap-southeast-2a.id
   route_table_id = aws_route_table.Australia-public-rtb.id
 }
 
 resource "aws_route_table_association" "public-ap-southeast-2b" {
+  provider       = aws.Australia
   subnet_id      = aws_subnet.public-ap-southeast-2b.id
   route_table_id = aws_route_table.Australia-public-rtb.id
 }
@@ -519,7 +543,7 @@ resource "aws_route_table_association" "public-ap-southeast-2b" {
 
 resource "aws_route_table" "New-York-private-rtb" {
   provider = aws.New-York
-  vpc_id = aws_vpc.TMMC-New-York.id
+  vpc_id   = aws_vpc.TMMC-New-York.id
 
   route = [
     {
@@ -545,6 +569,7 @@ resource "aws_route_table" "New-York-private-rtb" {
 }
 
 resource "aws_route_table" "New-York-public-rtb" {
+  provider = aws.New-York
   vpc_id = aws_vpc.TMMC-New-York.id
 
   route = [
@@ -570,27 +595,31 @@ resource "aws_route_table" "New-York-public-rtb" {
   }
 }
 
- #New York
+#New York
 
-  # private
+# private
 
 resource "aws_route_table_association" "private-us-east-1a" {
+  provider       = aws.New-York
   subnet_id      = aws_subnet.private-us-east-1a.id
   route_table_id = aws_route_table.New-York-private-rtb.id
 }
 
 resource "aws_route_table_association" "private-us-east-1b" {
+  provider       = aws.New-York
   subnet_id      = aws_subnet.private-us-east-1b.id
   route_table_id = aws_route_table.New-York-private-rtb.id
 }
-  # public
+# public
 
 resource "aws_route_table_association" "public-us-east-1a" {
+  provider       = aws.New-York
   subnet_id      = aws_subnet.public-us-east-1a.id
-route_table_id = aws_route_table.New-York-public-rtb.id
+  route_table_id = aws_route_table.New-York-public-rtb.id
 }
 
 resource "aws_route_table_association" "public-us-east-1b" {
+  provider       = aws.New-York
   subnet_id      = aws_subnet.public-us-east-1b.id
   route_table_id = aws_route_table.New-York-public-rtb.id
 }
