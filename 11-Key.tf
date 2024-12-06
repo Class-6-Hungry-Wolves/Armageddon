@@ -8,12 +8,12 @@ data "tls_public_key" "Key-Tokyo" {
   private_key_pem = tls_private_key.Key-Tokyo.private_key_pem
 }
 
-output "private_key"  {
+output "tokyo_private_key"  {
   value     = tls_private_key.Key-Tokyo.private_key_pem
   sensitive = true
 }
 
-output "public_key" {
+output "tokyo_public_key" {
   value = data.tls_public_key.Key-Tokyo.public_key_openssh
 }
 
@@ -27,12 +27,12 @@ data "tls_public_key" "Key-Hong-Kong" {
   private_key_pem = tls_private_key.Key-Hong-Kong.private_key_pem
 }
 
-output "private_key" {
+output "hong_kong_private_key" {
   value     = tls_private_key.Key-Hong-Kong.private_key_pem
   sensitive = true
 }
 
-output "public_key" {
+output "hong_kong_public_key" {
   value = data.tls_public_key.Key-Hong-Kong.public_key_openssh
 }
 
@@ -46,12 +46,12 @@ data "tls_public_key" "Key-London" {
   private_key_pem = tls_private_key.Key-London.private_key_pem
 }
 
-output "private_key" {
+output "london_private_key" {
   value     = tls_private_key.Key-London.private_key_pem
   sensitive = true
 }
 
-output "public_key" {
+output "london_public_key" {
   value = data.tls_public_key.Key-London.public_key_openssh
 }
 
@@ -65,12 +65,12 @@ data "tls_public_key" "Key-Sao-Paulo" {
   private_key_pem = tls_private_key.Key-Sao-Paulo.private_key_pem
 }
 
-output "private_key" {
+output "sao_paulo_private_key" {
   value     = tls_private_key.Key-Sao-Paulo.private_key_pem
   sensitive = true
 }
 
-output "public_key" {
+output "sao_paulo_public_key" {
   value = data.tls_public_key.Key-Sao-Paulo.public_key_openssh
 }
 
@@ -84,12 +84,12 @@ data "tls_public_key" "Key-California" {
   private_key_pem = tls_private_key.Key-California.private_key_pem
 }
 
-output "private_key" {
+output "california_private_key" {
   value     = tls_private_key.Key-California.private_key_pem
   sensitive = true
 }
 
-output "public_key" {
+output "california_public_key" {
   value = data.tls_public_key.Key-California.public_key_openssh
 }
 
@@ -103,12 +103,12 @@ data "tls_public_key" "Key-Australia" {
   private_key_pem = tls_private_key.Key-Australia.private_key_pem
 }
 
-output "private_key" {
+output "australia_private_key" {
   value     = tls_private_key.Key-Australia.private_key_pem
   sensitive = true
 }
 
-output "public_key" {
+output "australia_public_key" {
   value = data.tls_public_key.Key-Australia.public_key_openssh
 }
 
@@ -122,11 +122,11 @@ data "tls_public_key" "Key-New-York" {
   private_key_pem = tls_private_key.Key-New-York.private_key_pem
 }
 
-output "private_key" {
+output "new_york_private_key" {
   value     = tls_private_key.Key-New-York.private_key_pem
   sensitive = true
 }
 
-output "public_key" {
+output "new_york_public_key" {
   value = data.tls_public_key.Key-New-York.public_key_openssh
 }
