@@ -32,7 +32,7 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "London_TGW-Attach" {
 
 resource "aws_ec2_transit_gateway_peering_attachment" "London_TGW-Tokyo" {
   provider                = aws.London 
-  peer_region             = "eu-west-2"
+  peer_region             = "ap-northeast-1"
   peer_transit_gateway_id = aws_ec2_transit_gateway.Tokyo_TGW.id
   transit_gateway_id      = aws_ec2_transit_gateway.London_TGW.id
 
