@@ -11,11 +11,12 @@ locals {
 
 # Load Balancers for Each Region
 resource "aws_lb" "tokyo_alb" {
+  provider           = aws.Tokyo
   name               = "tmmc-telehealth-alb-tokyo"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.tokyo_sg.id]
-  subnets            = [aws_subnet.tokyo_public_subnet_1.id, aws_subnet.tokyo_public_subnet_2.id]
+  security_groups    = [aws_security_group.TMMC-Tokyo-sg02-LB.id]
+  subnets            = [aws_subnet.public-ap-northeast-1a.id, aws_subnet.public-ap-northeast-1c.id]
 
   enable_deletion_protection = true
 
@@ -27,11 +28,12 @@ resource "aws_lb" "tokyo_alb" {
 }
 
 resource "aws_lb" "newyork_alb" {
+  provider           = aws.New-York
   name               = "tmmc-telehealth-alb-newyork"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.newyork_sg.id]
-  subnets            = [aws_subnet.newyork_public_subnet_1.id, aws_subnet.newyork_public_subnet_2.id]
+  security_groups    = [aws_security_group.TMMC-New-York-sg02-LB.id]
+  subnets            = [aws_subnet.public-us-east-1a.id, aws_subnet.public-us-east-1b.id]
 
   enable_deletion_protection = true
 
@@ -43,11 +45,12 @@ resource "aws_lb" "newyork_alb" {
 }
 
 resource "aws_lb" "london_alb" {
+  provider           = aws.London
   name               = "tmmc-telehealth-alb-london"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.london_sg.id]
-  subnets            = [aws_subnet.london_public_subnet_1.id, aws_subnet.london_public_subnet_2.id]
+  security_groups    = [aws_security_group.TMMC-London-sg02-LB.id]
+  subnets            = [aws_subnet.public-eu-west-2a.id, aws_subnet.public-eu-west-2b.id]
 
   enable_deletion_protection = true
 
@@ -59,11 +62,12 @@ resource "aws_lb" "london_alb" {
 }
 
 resource "aws_lb" "saopaulo_alb" {
+  provider           = aws.Sao-Paulo
   name               = "tmmc-telehealth-alb-saopaulo"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.saopaulo_sg.id]
-  subnets            = [aws_subnet.saopaulo_public_subnet_1.id, aws_subnet.saopaulo_public_subnet_2.id]
+  security_groups    = [aws_security_group.TMMC-Sao-Paulo-sg02-LB.id]
+  subnets            = [aws_subnet.public-sa-east-1a.id, aws_subnet.public-sa-east-1c.id]
 
   enable_deletion_protection = true
 
@@ -75,11 +79,12 @@ resource "aws_lb" "saopaulo_alb" {
 }
 
 resource "aws_lb" "australia_alb" {
+  provider           = aws.Australia
   name               = "tmmc-telehealth-alb-australia"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.australia_sg.id]
-  subnets            = [aws_subnet.australia_public_subnet_1.id, aws_subnet.australia_public_subnet_2.id]
+  security_groups    = [aws_security_group.TMMC-Australia-sg02-LB.id]
+  subnets            = [aws_subnet.public-ap-southeast-2a.id, aws_subnet.public-ap-southeast-2b.id]
 
   enable_deletion_protection = true
 
@@ -91,11 +96,12 @@ resource "aws_lb" "australia_alb" {
 }
 
 resource "aws_lb" "hongkong_alb" {
+  provider           = aws.Hong-Kong
   name               = "tmmc-telehealth-alb-hongkong"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.hongkong_sg.id]
-  subnets            = [aws_subnet.hongkong_public_subnet_1.id, aws_subnet.hongkong_public_subnet_2.id]
+  security_groups    = [aws_security_group.TMMC-Hong-Kong-sg02-LB.id]
+  subnets            = [aws_subnet.public-ap-east-1a.id, aws_subnet.public-ap-east-1b.id]
 
   enable_deletion_protection = true
 
@@ -107,11 +113,12 @@ resource "aws_lb" "hongkong_alb" {
 }
 
 resource "aws_lb" "california_alb" {
+  provider = aws.California
   name               = "tmmc-telehealth-alb-california"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.california_sg.id]
-  subnets            = [aws_subnet.california_public_subnet_1.id, aws_subnet.california_public_subnet_2.id]
+  security_groups    = [aws_security_group.TMMC-California-sg02-LB.id]
+  subnets            = [aws_subnet.public-us-west-1a.id, aws_subnet.public-us-west-1b.id]
 
   enable_deletion_protection = true
 
