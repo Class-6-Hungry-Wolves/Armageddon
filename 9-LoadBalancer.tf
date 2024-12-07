@@ -1,5 +1,5 @@
 # Regions List
-locals {
+#locals {
   tokyo_region      = "ap-northeast-1"
   newyork_region    = "us-east-1"
   london_region     = "eu-west-2"
@@ -7,7 +7,7 @@ locals {
   australia_region  = "ap-southeast-2"
   hongkong_region   = "ap-east-1"
   california_region = "us-west-1"
-}
+#}
 
 # Load Balancers for Each Region
 resource "aws_lb" "tokyo_alb" {
