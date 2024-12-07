@@ -17,7 +17,7 @@ resource "aws_lb" "tokyo_alb" {
   security_groups    = [aws_security_group.TMMC-Tokyo-sg02-LB.id]
   subnets            = [aws_subnet.public-ap-northeast-1a.id, aws_subnet.public-ap-northeast-1c.id]
 
-  enable_deletion_protection = true
+  enable_deletion_protection = false
 
   tags = {
     Name        = "TMMC Telehealth ALB"
@@ -34,7 +34,7 @@ resource "aws_lb" "newyork_alb" {
   security_groups    = [aws_security_group.TMMC-New-York-sg02-LB.id]
   subnets            = [aws_subnet.public-us-east-1a.id, aws_subnet.public-us-east-1b.id]
 
-  enable_deletion_protection = true
+  enable_deletion_protection = false
 
   tags = {
     Name        = "TMMC Telehealth ALB"
@@ -51,11 +51,11 @@ resource "aws_lb" "london_alb" {
   security_groups    = [aws_security_group.TMMC-London-sg02-LB.id]
   subnets            = [aws_subnet.public-eu-west-2a.id, aws_subnet.public-eu-west-2b.id]
 
-  enable_deletion_protection = true
+  enable_deletion_protection = false
 
   tags = {
     Name        = "TMMC Telehealth ALB"
-    Region      = each.key
+    Region      = "london"
     Environment = "Production"
   }
 }
@@ -68,7 +68,7 @@ resource "aws_lb" "saopaulo_alb" {
   security_groups    = [aws_security_group.TMMC-Sao-Paulo-sg02-LB.id]
   subnets            = [aws_subnet.public-sa-east-1a.id, aws_subnet.public-sa-east-1c.id]
 
-  enable_deletion_protection = true
+  enable_deletion_protection = false
 
   tags = {
     Name        = "TMMC Telehealth ALB"
@@ -85,7 +85,7 @@ resource "aws_lb" "australia_alb" {
   security_groups    = [aws_security_group.TMMC-Australia-sg02-LB.id]
   subnets            = [aws_subnet.public-ap-southeast-2a.id, aws_subnet.public-ap-southeast-2b.id]
 
-  enable_deletion_protection = true
+  enable_deletion_protection = false
 
   tags = {
     Name        = "TMMC Telehealth ALB"
@@ -102,7 +102,7 @@ resource "aws_lb" "hongkong_alb" {
   security_groups    = [aws_security_group.TMMC-Hong-Kong-sg02-LB.id]
   subnets            = [aws_subnet.public-ap-east-1a.id, aws_subnet.public-ap-east-1b.id]
 
-  enable_deletion_protection = true
+  enable_deletion_protection = false
 
   tags = {
     Name        = "TMMC Telehealth ALB"
@@ -119,11 +119,11 @@ resource "aws_lb" "california_alb" {
   security_groups    = [aws_security_group.TMMC-California-sg02-LB.id]
   subnets            = [aws_subnet.public-us-west-1a.id, aws_subnet.public-us-west-1b.id]
 
-  enable_deletion_protection = true
+  enable_deletion_protection = false
 
   tags = {
     Name        = "TMMC Telehealth Target Group"
-    Region      = each.key
+    Region      = "california"
     Environment = "Production"
   }
 }
