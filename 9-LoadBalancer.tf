@@ -1,4 +1,3 @@
-# Regions List
 locals {
   tokyo_region      = "ap-northeast-1"
   newyork_region    = "us-east-1"
@@ -56,7 +55,7 @@ resource "aws_lb" "london_alb" {
 
   tags = {
     Name        = "TMMC Telehealth ALB"
-    Region      = "london"
+    Region      = each.key
     Environment = "Production"
   }
 }
@@ -123,8 +122,8 @@ resource "aws_lb" "california_alb" {
   enable_deletion_protection = true
 
   tags = {
-    Name        = "TMMC Telehealth ALB"
-    Region      = "california"
+    Name        = "TMMC Telehealth Target Group"
+    Region      = each.key
     Environment = "Production"
   }
 }
