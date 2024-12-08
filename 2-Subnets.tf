@@ -126,15 +126,15 @@ resource "aws_subnet" "public-sa-east-1c" {
 }
 
 #These are public subnets for California
-resource "aws_subnet" "public-us-west-1a" {
+resource "aws_subnet" "public-us-west-1c" {
   provider = aws.California
   vpc_id                  = aws_vpc.TMMC-California.id
-  cidr_block              = "10.84.1.0/24"
-  availability_zone       = "us-west-1a"
+  cidr_block              = "10.84.3.0/24"
+  availability_zone       = "us-west-1c"
   map_public_ip_on_launch = true
 
   tags = {
-    Name    = "TMMC-California-public-1a"
+    Name    = "TMMC-California-public-1c"
     Service = "J-Teledoctor"
     Owner   = "Hungry-Wolves"
     Planet  = "Earth"
@@ -341,14 +341,14 @@ resource "aws_subnet" "private-sa-east-1c" {
 
 #These are private subnets for California region
 
-resource "aws_subnet" "private-us-west-1a" {
+resource "aws_subnet" "private-us-west-1c" {
   provider = aws.California
   vpc_id            = aws_vpc.TMMC-California.id
-  cidr_block        = "10.84.11.0/24"
-  availability_zone = "us-west-1a"
+  cidr_block        = "10.84.13.0/24"
+  availability_zone = "us-west-1c"
 
   tags = {
-    Name    = "TMMC-California-private-1a"
+    Name    = "TMMC-California-private-1c"
     Service = "J-Teledoctor"
     Owner   = "Hungry-Wolves"
     Planet  = "Earth"

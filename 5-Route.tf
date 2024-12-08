@@ -5,26 +5,34 @@ resource "aws_route_table" "Tokyo-private-rtb" {
   provider = aws.Tokyo
   vpc_id   = aws_vpc.TMMC-Tokyo.id
 
-  route = [
-    {
-      cidr_block                 = "0.0.0.0/0"
-      nat_gateway_id             = aws_nat_gateway.Tokyo-NAT.id
-      carrier_gateway_id         = ""
-      destination_prefix_list_id = ""
-      egress_only_gateway_id     = ""
-      gateway_id                 = ""
-      instance_id                = ""
-      ipv6_cidr_block            = ""
-      local_gateway_id           = ""
-      network_interface_id       = ""
-      transit_gateway_id         = ""
-      vpc_endpoint_id            = ""
-      vpc_peering_connection_id  = ""
-
-
-
-    },
-  ]
+  route {
+    cidr_block     = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.Tokyo-NAT.id
+  }
+  route {
+    cidr_block         = "10.81.0.0/16"
+    transit_gateway_id = aws_ec2_transit_gateway.Hong_Kong_TGW.id
+  }
+  route {
+    cidr_block         = "10.82.0.0/16"
+    transit_gateway_id = aws_ec2_transit_gateway.London_TGW.id
+  }
+  route {
+    cidr_block         = "10.83.0.0/16"
+    transit_gateway_id = aws_ec2_transit_gateway.Sao_Paulo_TGW.id
+  }
+  route {
+    cidr_block         = "10.84.0.0/16"
+    transit_gateway_id = aws_ec2_transit_gateway.California_TGW.id
+  }
+  route {
+    cidr_block         = "10.85.0.0/16"
+    transit_gateway_id = aws_ec2_transit_gateway.Australia_TGW.id
+  }
+  route {
+    cidr_block         = "10.86.0.0/16"
+    transit_gateway_id = aws_ec2_transit_gateway.New_York_TGW.id
+  }
 
   tags = {
     Name = "TMMC-Tokyo-private"
@@ -100,25 +108,14 @@ resource "aws_route_table" "Hong-Kong-private-rtb" {
   provider = aws.Hong-Kong
   vpc_id   = aws_vpc.TMMC-Hong-Kong.id
 
-
-
-  route = [
-    {
-      cidr_block                 = "0.0.0.0/0"
-      nat_gateway_id             = aws_nat_gateway.Hong-Kong-NAT.id
-      carrier_gateway_id         = ""
-      destination_prefix_list_id = ""
-      egress_only_gateway_id     = ""
-      gateway_id                 = ""
-      instance_id                = ""
-      ipv6_cidr_block            = ""
-      local_gateway_id           = ""
-      network_interface_id       = ""
-      transit_gateway_id         = ""
-      vpc_endpoint_id            = ""
-      vpc_peering_connection_id  = ""
-    },
-  ]
+  route {
+    cidr_block     = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.Hong-Kong-NAT.id
+  }
+  route {
+    cidr_block         = "10.80.0.0/16"
+    transit_gateway_id = aws_ec2_transit_gateway.Hong_Kong_TGW.id
+  }
 
   tags = {
     Name = "Hong-Kong-private"
@@ -191,23 +188,15 @@ resource "aws_route_table" "London-private-rtb" {
   provider = aws.London
   vpc_id   = aws_vpc.TMMC-London.id
 
-  route = [
-    {
-      cidr_block                 = "0.0.0.0/0"
-      nat_gateway_id             = aws_nat_gateway.London-NAT.id
-      carrier_gateway_id         = ""
-      destination_prefix_list_id = ""
-      egress_only_gateway_id     = ""
-      gateway_id                 = ""
-      instance_id                = ""
-      ipv6_cidr_block            = ""
-      local_gateway_id           = ""
-      network_interface_id       = ""
-      transit_gateway_id         = ""
-      vpc_endpoint_id            = ""
-      vpc_peering_connection_id  = ""
-    },
-  ]
+  route {
+    cidr_block     = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.London-NAT.id
+  }
+  route {
+    cidr_block         = "10.80.0.0/16"
+    transit_gateway_id = aws_ec2_transit_gateway.London_TGW.id
+  }
+
   tags = {
     Name = "TMMC-London-private"
   }
@@ -285,23 +274,14 @@ resource "aws_route_table" "Sao-Paulo-private-rtb" {
   provider = aws.Sao-Paulo
   vpc_id   = aws_vpc.TMMC-Sao-Paulo.id
 
-  route = [
-    {
-      cidr_block                 = "0.0.0.0/0"
-      nat_gateway_id             = aws_nat_gateway.Sao-Paulo-NAT.id
-      carrier_gateway_id         = ""
-      destination_prefix_list_id = ""
-      egress_only_gateway_id     = ""
-      gateway_id                 = ""
-      instance_id                = ""
-      ipv6_cidr_block            = ""
-      local_gateway_id           = ""
-      network_interface_id       = ""
-      transit_gateway_id         = ""
-      vpc_endpoint_id            = ""
-      vpc_peering_connection_id  = ""
-    },
-  ]
+  route {
+    cidr_block     = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.Sao-Paulo-NAT.id
+  }
+  route {
+    cidr_block         = "10.80.0.0/16"
+    transit_gateway_id = aws_ec2_transit_gateway.Sao_Paulo_TGW.id
+  }
 
   tags = {
     Name = "TMMC-Sao-Paulo-private"
@@ -377,23 +357,14 @@ resource "aws_route_table" "California-private-rtb" {
   provider = aws.California
   vpc_id   = aws_vpc.TMMC-California.id
 
-  route = [
-    {
-      cidr_block                 = "0.0.0.0/0"
-      nat_gateway_id             = aws_nat_gateway.California-NAT.id
-      carrier_gateway_id         = ""
-      destination_prefix_list_id = ""
-      egress_only_gateway_id     = ""
-      gateway_id                 = ""
-      instance_id                = ""
-      ipv6_cidr_block            = ""
-      local_gateway_id           = ""
-      network_interface_id       = ""
-      transit_gateway_id         = ""
-      vpc_endpoint_id            = ""
-      vpc_peering_connection_id  = ""
-    },
-  ]
+  route {
+    cidr_block     = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.California-NAT.id
+  }
+  route {
+    cidr_block         = "10.80.0.0/16"
+    transit_gateway_id = aws_ec2_transit_gateway.California_TGW.id
+  }
 
   tags = {
     Name = "TMMC-California-private"
@@ -429,9 +400,9 @@ resource "aws_route_table" "California-public-rtb" {
 # California
 
 # private
-resource "aws_route_table_association" "private-us-west-1a" {
+resource "aws_route_table_association" "private-us-west-1c" {
   provider       = aws.California
-  subnet_id      = aws_subnet.private-us-west-1a.id
+  subnet_id      = aws_subnet.private-us-west-1c.id
   route_table_id = aws_route_table.California-private-rtb.id
 }
 
@@ -443,9 +414,9 @@ resource "aws_route_table_association" "private-us-west-1b" {
 
 #public
 
-resource "aws_route_table_association" "public-us-west-1a" {
+resource "aws_route_table_association" "public-us-west-1c" {
   provider       = aws.California
-  subnet_id      = aws_subnet.public-us-west-1a.id
+  subnet_id      = aws_subnet.public-us-west-1c.id
   route_table_id = aws_route_table.California-public-rtb.id
 }
 
@@ -459,23 +430,14 @@ resource "aws_route_table" "Australia-private-rtb" {
   provider = aws.Australia
   vpc_id   = aws_vpc.TMMC-Australia.id
 
-  route = [
-    {
-      cidr_block                 = "0.0.0.0/0"
-      nat_gateway_id             = aws_nat_gateway.Australia-NAT.id
-      carrier_gateway_id         = ""
-      destination_prefix_list_id = ""
-      egress_only_gateway_id     = ""
-      gateway_id                 = ""
-      instance_id                = ""
-      ipv6_cidr_block            = ""
-      local_gateway_id           = ""
-      network_interface_id       = ""
-      transit_gateway_id         = ""
-      vpc_endpoint_id            = ""
-      vpc_peering_connection_id  = ""
-    },
-  ]
+  route {
+    cidr_block     = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.Australia-NAT.id
+  }
+  route {
+    cidr_block         = "10.80.0.0/16"
+    transit_gateway_id = aws_ec2_transit_gateway.Australia_TGW.id
+  }
 
   tags = {
     Name = "TMMC-Australia-private"
@@ -544,23 +506,14 @@ resource "aws_route_table" "New-York-private-rtb" {
   provider = aws.New-York
   vpc_id   = aws_vpc.TMMC-New-York.id
 
-  route = [
-    {
-      cidr_block                 = "0.0.0.0/0"
-      nat_gateway_id             = aws_nat_gateway.New-York-NAT.id
-      carrier_gateway_id         = ""
-      destination_prefix_list_id = ""
-      egress_only_gateway_id     = ""
-      gateway_id                 = ""
-      instance_id                = ""
-      ipv6_cidr_block            = ""
-      local_gateway_id           = ""
-      network_interface_id       = ""
-      transit_gateway_id         = ""
-      vpc_endpoint_id            = ""
-      vpc_peering_connection_id  = ""
-    },
-  ]
+  route {
+    cidr_block     = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.New-York-NAT.id
+  }
+  route {
+    cidr_block         = "10.80.0.0/16"
+    transit_gateway_id = aws_ec2_transit_gateway.New_York_TGW.id
+  }
 
   tags = {
     Name = "TMMC-New-York-private"
@@ -569,7 +522,7 @@ resource "aws_route_table" "New-York-private-rtb" {
 
 resource "aws_route_table" "New-York-public-rtb" {
   provider = aws.New-York
-  vpc_id = aws_vpc.TMMC-New-York.id
+  vpc_id   = aws_vpc.TMMC-New-York.id
 
   route = [
     {

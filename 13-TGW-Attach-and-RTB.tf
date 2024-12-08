@@ -115,7 +115,7 @@ resource "aws_ec2_transit_gateway_peering_attachment" "Sao-Paulo_TGW-Tokyo" {
 
 resource "aws_ec2_transit_gateway_vpc_attachment" "California_TGW-Attach" {
   provider           = aws.California
-  subnet_ids         = [aws_subnet.private-us-west-1a.id, aws_subnet.private-us-west-1b.id ]
+  subnet_ids         = [aws_subnet.private-us-west-1c.id, aws_subnet.private-us-west-1b.id ]
   transit_gateway_id = aws_ec2_transit_gateway.California_TGW.id
   vpc_id             = aws_vpc.TMMC-California.id
 }
