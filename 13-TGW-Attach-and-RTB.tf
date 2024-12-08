@@ -5,6 +5,59 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "Tokyo_TGW-Attach" {
   vpc_id             = aws_vpc.TMMC-Tokyo.id
 }
 
+resource "aws_ec2_transit_gateway_peering_attachment_accepter" "Hong-Kong_TGW-Peer-Accept" {
+  provider = aws.Tokyo
+  transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.Hong-Kong_TGW-Tokyo.id
+  
+  tags = {
+    Name = "Hong-Kong-peer-connection"
+  }
+}
+
+resource "aws_ec2_transit_gateway_peering_attachment_accepter" "London_TGW-Peer-Accept" {
+  provider = aws.Tokyo
+  transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.London_TGW-Tokyo.id
+
+  tags = {
+    Name = "London-peer-connection"
+  }
+}
+
+resource "aws_ec2_transit_gateway_peering_attachment_accepter" "Sao-Paulo_TGW-Peer-Accept" {
+  provider = aws.Tokyo
+  transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.Sao-Paulo_TGW-Tokyo.id
+
+  tags = {
+    Name = "Sao-Paulo-peer-connection"
+  }
+}
+
+resource "aws_ec2_transit_gateway_peering_attachment_accepter" "California_TGW-Peer-Accept" {
+  provider = aws.Tokyo
+  transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.California_TGW-Tokyo.id
+
+  tags = {
+    Name = "California-peer-connection"
+  }
+}
+
+resource "aws_ec2_transit_gateway_peering_attachment_accepter" "Australia_TGW-Peer-Accept" {
+  provider = aws.Tokyo
+  transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.Australia_TGW-Tokyo.id
+
+  tags = {
+    Name = "Australia-peer-connection"
+  }
+}
+
+resource "aws_ec2_transit_gateway_peering_attachment_accepter" "New-York_TGW-Peer-Accept" {
+  provider = aws.Tokyo
+  transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.New-York_TGW-Tokyo.id
+
+  tags = {
+    Name = "New-York-peer-connection"
+  }
+}
 
 resource "aws_ec2_transit_gateway_vpc_attachment" "Hong_Kong_TGW-Attach" {
   provider           = aws.Hong-Kong
