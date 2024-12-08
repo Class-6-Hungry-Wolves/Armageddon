@@ -4,7 +4,7 @@ resource "aws_launch_template" "Hong-Kong-LT" {
   provider = aws.Hong-Kong
   name_prefix   = "Hong-Kong-LT"
   image_id      = "ami-06f707739f2271995"  
-  instance_type = "t2.micro"
+  instance_type = "t3.micro"
 
   key_name = "Key-Hong-Kong"
 
@@ -372,7 +372,7 @@ resource "aws_launch_template" "Sao-Paulo-LT" {
   image_id      = "ami-0c820c196a818d66a"  
   instance_type = "t2.micro"
 
-  key_name = "Key-Sao Paulo"
+  key_name = "Key-Sao-Paulo"
 
   vpc_security_group_ids = [aws_security_group.TMMC-Sao-Paulo-sg01-servers.id]
 
@@ -442,7 +442,7 @@ resource "aws_launch_template" "Sao-Paulo-LT" {
 resource "aws_launch_template" "Tokyo-LT" {
   provider    = aws.Tokyo
   name_prefix   = "Tokyo-LT"
-  image_id      = "ami-0e577819b2a6cc996"  
+  image_id      = "ami-023ff3d4ab11b2525"  
   instance_type = "t2.micro"
 
   key_name = "Key-Tokyo"

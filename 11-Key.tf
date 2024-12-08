@@ -1,146 +1,118 @@
-# #TOKYO TOKYO TOKYO
-# resource "tls_private_key" "Key-Tokyo" {
-#   provider   = aws.Tokyo
-#   algorithm = "RSA"
-#   rsa_bits  = 2048
-# }
+#TOKYO TOKYO TOKYO
+resource "tls_private_key" "Key-Tokyo" {
+  algorithm = "RSA"
+  rsa_bits  = 2048
+}
 
-# data "tls_public_key" "Key-Tokyo" {
-#   provider   = aws.Tokyo
-#   private_key_pem = tls_private_key.Key-Tokyo.private_key_pem
-# }
+resource "aws_key_pair" "Key-Tokyo" {
+  provider   = aws.Tokyo
+  key_name   = "Key-Tokyo"
+  public_key = tls_private_key.Key-Tokyo.public_key_openssh
+}
 
-# output "tokyo_private_key"  {
-#   value     = tls_private_key.Key-Tokyo.private_key_pem
-#   sensitive = true
-# }
+output "tokyo_private_key" {
+  value     = tls_private_key.Key-Tokyo.private_key_pem
+  sensitive = true
+}
 
-# output "tokyo_public_key" {
-#   value = data.tls_public_key.Key-Tokyo.public_key_openssh
-# }
+#HONG KONG HONG KONG HONG KONG
+resource "tls_private_key" "Key-Hong-Kong" {
+  algorithm = "RSA"
+  rsa_bits  = 2048
+}
 
-# #HONG KONG   HONG KONG   HONG KONG
-# resource "tls_private_key" "Key-Hong-Kong" {
-#   provider   = aws.Hong-Kong
-#   algorithm = "RSA"
-#   rsa_bits  = 2048
-# }
+resource "aws_key_pair" "Key-Hong-Kong" {
+  provider   = aws.Hong-Kong
+  key_name   = "Key-Hong-Kong"
+  public_key = tls_private_key.Key-Hong-Kong.public_key_openssh
+}
 
-# data "tls_public_key" "Key-Hong-Kong" {
-#   provider   = aws.Hong-Kong
-#   private_key_pem = tls_private_key.Key-Hong-Kong.private_key_pem
-# }
+output "hong_kong_private_key" {
+  value     = tls_private_key.Key-Hong-Kong.private_key_pem
+  sensitive = true
+}
 
-# output "hong_kong_private_key" {
-#   value     = tls_private_key.Key-Hong-Kong.private_key_pem
-#   sensitive = true
-# }
+#LONDON LONDON LONDON
+resource "tls_private_key" "Key-London" {
+  algorithm = "RSA"
+  rsa_bits  = 2048
+}
 
-# output "hong_kong_public_key" {
-#   value = data.tls_public_key.Key-Hong-Kong.public_key_openssh
-# }
+resource "aws_key_pair" "Key-London" {
+  provider   = aws.London
+  key_name   = "Key-London"
+  public_key = tls_private_key.Key-London.public_key_openssh
+}
 
-# #LONDON   LONDON   LONDON
-# resource "tls_private_key" "Key-London" {
-#   provider   = aws.London
-#   algorithm = "RSA"
-#   rsa_bits  = 2048
-# }
+output "london_private_key" {
+  value     = tls_private_key.Key-London.private_key_pem
+  sensitive = true
+}
 
-# data "tls_public_key" "Key-London" {
-#   provider   = aws.London
-#   private_key_pem = tls_private_key.Key-London.private_key_pem
-# }
+#SAO PAULO SAO PAULO SAO PAULO
+resource "tls_private_key" "Key-Sao-Paulo" {
+  algorithm = "RSA"
+  rsa_bits  = 2048
+}
 
-# output "london_private_key" {
-#   value     = tls_private_key.Key-London.private_key_pem
-#   sensitive = true
-# }
+resource "aws_key_pair" "Key-Sao-Paulo" {
+  provider   = aws.Sao-Paulo
+  key_name   = "Key-Sao-Paulo"
+  public_key = tls_private_key.Key-Sao-Paulo.public_key_openssh
+}
 
-# output "london_public_key" {
-#   value = data.tls_public_key.Key-London.public_key_openssh
-# }
+output "sao_paulo_private_key" {
+  value     = tls_private_key.Key-Sao-Paulo.private_key_pem
+  sensitive = true
+}
 
-# #SAO PUALO   SAO PUALO   SAO PUALO
-# resource "tls_private_key" "Key-Sao-Paulo" {
-#   provider   = aws.Sao-Paulo
-#   algorithm = "RSA"
-#   rsa_bits  = 2048
-# }
+#CALIFORNIA CALIFORNIA CALIFORNIA
+resource "tls_private_key" "Key-California" {
+  algorithm = "RSA"
+  rsa_bits  = 2048
+}
 
-# data "tls_public_key" "Key-Sao-Paulo" {
-#   provider   = aws.Sao-Paulo
-#   private_key_pem = tls_private_key.Key-Sao-Paulo.private_key_pem
-# }
+resource "aws_key_pair" "Key-California" {
+  provider   = aws.California
+  key_name   = "Key-California"
+  public_key = tls_private_key.Key-California.public_key_openssh
+}
 
-# output "sao_paulo_private_key" {
-#   value     = tls_private_key.Key-Sao-Paulo.private_key_pem
-#   sensitive = true
-# }
+output "california_private_key" {
+  value     = tls_private_key.Key-California.private_key_pem
+  sensitive = true
+}
 
-# output "sao_paulo_public_key" {
-#   value = data.tls_public_key.Key-Sao-Paulo.public_key_openssh
-# }
+#AUSTRALIA AUSTRALIA AUSTRALIA
+resource "tls_private_key" "Key-Australia" {
+  algorithm = "RSA"
+  rsa_bits  = 2048
+}
 
-# #CALIFORNIA   CALIFORNIA   CALIFORNIA
-# resource "tls_private_key" "Key-California" {
-#   provider   = aws.California
-#   algorithm = "RSA"
-#   rsa_bits  = 2048
-# }
+resource "aws_key_pair" "Key-Australia" {
+  provider   = aws.Australia
+  key_name   = "Key-Australia"
+  public_key = tls_private_key.Key-Australia.public_key_openssh
+}
 
-# data "tls_public_key" "Key-California" {
-#   provider   = aws.California
-#   private_key_pem = tls_private_key.Key-California.private_key_pem
-# }
+output "australia_private_key" {
+  value     = tls_private_key.Key-Australia.private_key_pem
+  sensitive = true
+}
 
-# output "california_private_key" {
-#   value     = tls_private_key.Key-California.private_key_pem
-#   sensitive = true
-# }
+#NEW YORK NEW YORK NEW YORK
+resource "tls_private_key" "Key-New-York" {
+  algorithm = "RSA"
+  rsa_bits  = 2048
+}
 
-# output "california_public_key" {
-#   value = data.tls_public_key.Key-California.public_key_openssh
-# }
+resource "aws_key_pair" "Key-New-York" {
+  provider   = aws.New-York
+  key_name   = "Key-New-York"
+  public_key = tls_private_key.Key-New-York.public_key_openssh
+}
 
-# #AUSTRALIA   AUSTRALIA   AUSTRALIA
-# resource "tls_private_key" "Key-Australia" {
-#   provider   = aws.Australia
-#   algorithm = "RSA"
-#   rsa_bits  = 2048
-# }
-
-# data "tls_public_key" "Key-Australia" {
-#   provider   = aws.Australia
-#   private_key_pem = tls_private_key.Key-Australia.private_key_pem
-# }
-
-# output "australia_private_key" {
-#   value     = tls_private_key.Key-Australia.private_key_pem
-#   sensitive = true
-# }
-
-# output "australia_public_key" {
-#   value = data.tls_public_key.Key-Australia.public_key_openssh
-# }
-
-# #NEW YORK   NEW YORK   NEW YORK
-# resource "tls_private_key" "Key-New-York" {
-#   provider   = aws.New-York
-#   algorithm = "RSA"
-#   rsa_bits  = 2048
-# }
-
-# data "tls_public_key" "Key-New-York" {
-#   provider   = aws.New-York
-#   private_key_pem = tls_private_key.Key-New-York.private_key_pem
-# }
-
-# output "new_york_private_key" {
-#   value     = tls_private_key.Key-New-York.private_key_pem
-#   sensitive = true
-# }
-
-# output "new_york_public_key" {
-#   value = data.tls_public_key.Key-New-York.public_key_openssh
-# }
+output "new_york_private_key" {
+  value     = tls_private_key.Key-New-York.private_key_pem
+  sensitive = true
+}
