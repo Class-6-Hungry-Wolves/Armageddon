@@ -5,38 +5,16 @@ resource "aws_route_table" "Tokyo-private-rtb" {
   provider = aws.Tokyo
   vpc_id   = aws_vpc.TMMC-Tokyo.id
 
-  route {
-    cidr_block     = "0.0.0.0/0"
-    nat_gateway_id = aws_nat_gateway.Tokyo-NAT.id
-  }
-  route {
-    cidr_block         = "10.81.0.0/16"
-    transit_gateway_id = aws_ec2_transit_gateway.Hong_Kong_TGW.id
-  }
-  route {
-    cidr_block         = "10.82.0.0/16"
-    transit_gateway_id = aws_ec2_transit_gateway.London_TGW.id
-  }
-  route {
-    cidr_block         = "10.83.0.0/16"
-    transit_gateway_id = aws_ec2_transit_gateway.Sao_Paulo_TGW.id
-  }
-  route {
-    cidr_block         = "10.84.0.0/16"
-    transit_gateway_id = aws_ec2_transit_gateway.California_TGW.id
-  }
-  route {
-    cidr_block         = "10.85.0.0/16"
-    transit_gateway_id = aws_ec2_transit_gateway.Australia_TGW.id
-  }
-  route {
-    cidr_block         = "10.86.0.0/16"
-    transit_gateway_id = aws_ec2_transit_gateway.New_York_TGW.id
-  }
-
   tags = {
     Name = "TMMC-Tokyo-private"
   }
+}
+
+resource "aws_route" "tokyo_to_hong_kong" {
+  provider = aws.Tokyo
+  route_table_id = aws_route_table.Tokyo-private-rtb.id
+  destination_cidr_block = aws_vpc.TMMC-Hong-Kong.cidr_block
+  transit_gateway_id = aws_ec2_transit_gateway.Tokyo_TGW.id
 }
 
 # Tokyo
@@ -112,14 +90,17 @@ resource "aws_route_table" "Hong-Kong-private-rtb" {
     cidr_block     = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.Hong-Kong-NAT.id
   }
-  route {
-    cidr_block         = "10.80.0.0/16"
-    transit_gateway_id = aws_ec2_transit_gateway.Hong_Kong_TGW.id
-  }
 
   tags = {
     Name = "Hong-Kong-private"
   }
+}
+
+resource "aws_route" "hong_kong_to_tokyo" {
+  provider = aws.Hong-Kong
+  route_table_id = aws_route_table.Hong-Kong-private-rtb.id
+  destination_cidr_block = aws_vpc.TMMC-Tokyo.cidr_block
+  transit_gateway_id = aws_ec2_transit_gateway.Hong_Kong_TGW.id
 }
 
 #Hong Kong
@@ -191,10 +172,6 @@ resource "aws_route_table" "London-private-rtb" {
   route {
     cidr_block     = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.London-NAT.id
-  }
-  route {
-    cidr_block         = "10.80.0.0/16"
-    transit_gateway_id = aws_ec2_transit_gateway.London_TGW.id
   }
 
   tags = {
@@ -278,10 +255,6 @@ resource "aws_route_table" "Sao-Paulo-private-rtb" {
     cidr_block     = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.Sao-Paulo-NAT.id
   }
-  route {
-    cidr_block         = "10.80.0.0/16"
-    transit_gateway_id = aws_ec2_transit_gateway.Sao_Paulo_TGW.id
-  }
 
   tags = {
     Name = "TMMC-Sao-Paulo-private"
@@ -361,10 +334,6 @@ resource "aws_route_table" "California-private-rtb" {
     cidr_block     = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.California-NAT.id
   }
-  route {
-    cidr_block         = "10.80.0.0/16"
-    transit_gateway_id = aws_ec2_transit_gateway.California_TGW.id
-  }
 
   tags = {
     Name = "TMMC-California-private"
@@ -433,10 +402,6 @@ resource "aws_route_table" "Australia-private-rtb" {
   route {
     cidr_block     = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.Australia-NAT.id
-  }
-  route {
-    cidr_block         = "10.80.0.0/16"
-    transit_gateway_id = aws_ec2_transit_gateway.Australia_TGW.id
   }
 
   tags = {
@@ -509,10 +474,6 @@ resource "aws_route_table" "New-York-private-rtb" {
   route {
     cidr_block     = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.New-York-NAT.id
-  }
-  route {
-    cidr_block         = "10.80.0.0/16"
-    transit_gateway_id = aws_ec2_transit_gateway.New_York_TGW.id
   }
 
   tags = {
