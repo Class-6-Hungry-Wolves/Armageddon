@@ -28,7 +28,7 @@ Each region must meet the following criteria:
 
 ---
 
-### Each region pinging Tokyo
+### Each Region Pinging Tokyo
 
 ![Screenshot_2024-12-09_205840](https://github.com/user-attachments/assets/29449553-47bc-4a54-aba8-58da0da24f31)
 ![Screenshot_2024-12-09_210221](https://github.com/user-attachments/assets/dafc19ee-a37d-4301-aa5a-f2c613ecdb6f)
