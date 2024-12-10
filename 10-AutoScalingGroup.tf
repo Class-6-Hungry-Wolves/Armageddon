@@ -2,9 +2,9 @@
 resource "aws_autoscaling_group" "Hong-Kong-ASG" {
   provider         = aws.Hong-Kong
   name_prefix      = "Hong-Kong-ASG"
-  min_size         = 3
-  max_size         = 15
-  desired_capacity = 6
+  min_size         = 2
+  max_size         = 8
+  desired_capacity = 4
   vpc_zone_identifier = [
     aws_subnet.private-ap-east-1a.id,
     aws_subnet.private-ap-east-1b.id
@@ -73,9 +73,9 @@ resource "aws_autoscaling_policy" "Hong-Kong-Scaling-Policy" {
 resource "aws_autoscaling_group" "Sao-Paulo-ASG" {
   provider         = aws.Sao-Paulo
   name_prefix      = "Sao-Paulo-ASG"
-  min_size         = 3
-  max_size         = 15
-  desired_capacity = 6
+  min_size         = 2
+  max_size         = 8
+  desired_capacity = 4
   vpc_zone_identifier = [
     aws_subnet.private-sa-east-1a.id,
     aws_subnet.private-sa-east-1c.id
@@ -144,9 +144,9 @@ resource "aws_autoscaling_policy" "Sao-Paulo-Scaling-Policy" {
 resource "aws_autoscaling_group" "New-York-ASG" {
   provider         = aws.New-York
   name_prefix      = "New-York-ASG"
-  min_size         = 3
-  max_size         = 15
-  desired_capacity = 6
+  min_size         = 2
+  max_size         = 8
+  desired_capacity = 4
   vpc_zone_identifier = [
     aws_subnet.private-us-east-1a.id,
     aws_subnet.private-us-east-1b.id
@@ -215,11 +215,11 @@ resource "aws_autoscaling_policy" "New-York-Scaling-Policy" {
 resource "aws_autoscaling_group" "California-ASG" {
   provider         = aws.California
   name_prefix      = "California-ASG"
-  min_size         = 3
-  max_size         = 15
-  desired_capacity = 6
+  min_size         = 2
+  max_size         = 8
+  desired_capacity = 4
   vpc_zone_identifier = [
-    aws_subnet.private-us-west-1c.id,
+    aws_subnet.private-us-west-1a.id,
     aws_subnet.private-us-west-1b.id
   ]
   health_check_type         = "ELB"
@@ -286,9 +286,9 @@ resource "aws_autoscaling_policy" "California-Scaling-Policy" {
 resource "aws_autoscaling_group" "London-ASG" {
   provider         = aws.London
   name_prefix      = "London-ASG"
-  min_size         = 3
-  max_size         = 15
-  desired_capacity = 6
+  min_size         = 2
+  max_size         = 8
+  desired_capacity = 4
   vpc_zone_identifier = [
     aws_subnet.private-eu-west-2a.id,
     aws_subnet.private-eu-west-2b.id
@@ -357,9 +357,9 @@ resource "aws_autoscaling_policy" "London-Scaling-Policy" {
 resource "aws_autoscaling_group" "Australia-ASG" {
   provider         = aws.Australia
   name_prefix      = "Australia-ASG"
-  min_size         = 3
-  max_size         = 15
-  desired_capacity = 6
+  min_size         = 2
+  max_size         = 8
+  desired_capacity = 4
   vpc_zone_identifier = [
     aws_subnet.private-ap-southeast-2a.id,
     aws_subnet.private-ap-southeast-2b.id
@@ -428,9 +428,9 @@ resource "aws_autoscaling_policy" "Australia-Scaling-Policy" {
 resource "aws_autoscaling_group" "Tokyo-ASG" {
   provider         = aws.Tokyo
   name_prefix      = "Tokyo-ASG"
-  min_size         = 3
-  max_size         = 15
-  desired_capacity = 6
+  min_size         = 2
+  max_size         = 8
+  desired_capacity = 4
   vpc_zone_identifier = [
     aws_subnet.private-ap-northeast-1a.id,
     aws_subnet.private-ap-northeast-1c.id

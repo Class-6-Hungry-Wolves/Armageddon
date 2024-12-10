@@ -73,7 +73,7 @@ resource "aws_eip" "New-York-NAT" {
 }
 
 resource "aws_nat_gateway" "New-York-NAT" {
-  provider   = aws.New-York  
+  provider      = aws.New-York  
   allocation_id = aws_eip.New-York-NAT.id
   subnet_id     = aws_subnet.public-us-east-1a.id
 
@@ -165,7 +165,7 @@ resource "aws_eip" "California-NAT" {
 resource "aws_nat_gateway" "California-NAT" {
   provider   = aws.California  
   allocation_id = aws_eip.California-NAT.id
-  subnet_id     = aws_subnet.public-us-west-1b.id
+  subnet_id     = aws_subnet.public-us-west-1a.id
 
   tags = {
     Name        = "California-NAT"

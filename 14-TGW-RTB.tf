@@ -50,6 +50,41 @@ resource "aws_ec2_transit_gateway_route" "tokyo_to_hong_kong_route" {
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
 }
 
+resource "aws_ec2_transit_gateway_route" "tokyo_to_london_route" {
+  provider                       = aws.Tokyo
+  destination_cidr_block         = aws_vpc.TMMC-London.cidr_block
+  transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.London_to_tokyo.id
+  transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
+}
+
+resource "aws_ec2_transit_gateway_route" "tokyo_to_sao_paulo_route" {
+  provider                       = aws.Tokyo
+  destination_cidr_block         = aws_vpc.TMMC-Sao-Paulo.cidr_block
+  transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.Sao_Paulo_to_tokyo.id
+  transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
+}
+
+resource "aws_ec2_transit_gateway_route" "toyko_to_california_route" {
+  provider                       = aws.Tokyo
+  destination_cidr_block         = aws_vpc.TMMC-California.cidr_block
+  transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.California_to_tokyo.id
+  transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
+}
+
+resource "aws_ec2_transit_gateway_route" "toyko_to_australia_route" {
+  provider                       = aws.Tokyo
+  destination_cidr_block         = aws_vpc.TMMC-Australia.cidr_block
+  transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.Australia_to_tokyo.id
+  transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
+}
+
+resource "aws_ec2_transit_gateway_route" "toyko_to_new_york_route" {
+  provider                       = aws.Tokyo
+  destination_cidr_block         = aws_vpc.TMMC-New-York.cidr_block
+  transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.New_York_to_tokyo.id
+  transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
+}
+
 resource "aws_ec2_transit_gateway_route" "tokyo_local_vpc_route" {
   provider                       = aws.Tokyo
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
@@ -63,9 +98,39 @@ resource "aws_ec2_transit_gateway_route_table_association" "tokyo_vpc_associatio
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
 }
 
-resource "aws_ec2_transit_gateway_route_table_association" "tokyo_peering_association" {
+resource "aws_ec2_transit_gateway_route_table_association" "tokyo_hong_kong_peering_association" {
   provider                       = aws.Tokyo
   transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.hong_kong_to_tokyo.id
+  transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
+}
+
+resource "aws_ec2_transit_gateway_route_table_association" "tokyo_london_peering_association" {
+  provider                       = aws.Tokyo
+  transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.London_to_tokyo.id
+  transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
+}
+
+resource "aws_ec2_transit_gateway_route_table_association" "tokyo_sao_paulo_peering_association" {
+  provider                       = aws.Tokyo
+  transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.Sao_Paulo_to_tokyo.id
+  transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
+}
+
+resource "aws_ec2_transit_gateway_route_table_association" "tokyo_california_peering_association" {
+  provider                       = aws.Tokyo
+  transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.California_to_tokyo.id
+  transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
+}
+
+resource "aws_ec2_transit_gateway_route_table_association" "tokyo_australia_peering_association" {
+  provider                       = aws.Tokyo
+  transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.Australia_to_tokyo.id
+  transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
+}
+
+resource "aws_ec2_transit_gateway_route_table_association" "tokyo_new_york_peering_association" {
+  provider                       = aws.Tokyo
+  transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.New_York_to_tokyo.id
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
 }
 

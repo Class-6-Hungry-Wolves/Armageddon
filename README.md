@@ -1,7 +1,7 @@
 # Class 6 Hungry Wolves Armageddon Project
 
 ## Overview
-Our POC project is an infrastructure design and implementation initiative for **Tokyo Midtown Medical Center (TMMC)** to establish a global telehealth service called **J-Tele-Doctor**. This solution will enable TMMC customers to access medical care remotely while complying with strict data localization and security requirements. The project focuses on leveraging **AWS Japan** as the primary cloud provider and spans across multiple global regions.
+Our POC project is an infrastructure design and implementation initiative for **Tokyo Midtown Medical Center (TMMC)** to establish a global telehealth service called **J-Tele-Doctor**. This solution will enable TMMC customers to access medical care remotely while complying with strict data localization and security requirements. The project focuses on leveraging **AWS Japan** as the primary cloud  and spans across multiple global regions.
 
 ---
 
