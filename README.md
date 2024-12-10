@@ -31,8 +31,8 @@ Each region must meet the following criteria:
 ### Diagram
 
 ---
+![Hungry Wolves Armageddon Diagram](https://github.com/user-attachments/assets/31bcad3b-4a02-4bcb-b67a-2ffb26891a2f)
 
-![Hungry Wolves Armageddon Project Diagram](https://github.com/user-attachments/assets/1cff4e6a-2e10-41b5-b524-7dd0d2564347)
 
 
 ### Each Region Pinging Tokyo
