@@ -248,7 +248,35 @@ resource "aws_subnet" "private-ap-northeast-1c" {
     Planet  = "Earth"
   }
 }
+# Syslog server subnet
 
+resource "aws_subnet" "private-ap-northeast-1d-SYS" {
+  provider = aws.Tokyo 
+  vpc_id = aws_vpc.TMMC-Tokyo.id
+  cidr_block = "10.80.14.0/24"
+  availability_zone = "ap-northeast-1d"
+  tags = {
+    Name    = "TMMC-Tokyo-private-1d"
+    Service = "J-Teledoctor"
+    Owner   = "Hungry-Wolves"
+    Planet  = "Earth"
+  }
+}
+
+# Tokyo Database subnet
+
+resource "aws_subnet" "private-ap-northeast-1d-DB" {
+  provider          = aws.Tokyo 
+  vpc_id            = aws_vpc.TMMC-Tokyo.id
+  cidr_block        = "10.80.54.0/24"
+  availability_zone = "ap-northeast-1d"
+  tags = {
+    Name    = "TMMC-Tokyo-private-1d"
+    Service = "J-Teledoctor"
+    Owner   = "Hungry-Wolves"
+    Planet  = "Earth"
+  }
+}
 #These are private for Hong Kong region 
 
 resource "aws_subnet" "private-ap-east-1a" {
