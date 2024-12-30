@@ -116,3 +116,21 @@ output "new_york_private_key" {
   value     = tls_private_key.Key-New-York.private_key_pem
   sensitive = true
 }
+
+# Syslog test instance
+resource "tls_private_key" "Key-syslog" {
+  algorithm = "RSA"
+  rsa_bits  = 2048
+}
+
+resource "aws_key_pair" "Key-syslog" {
+  provider   = aws.Tokyo
+  key_name   = "Key-syslog"
+  public_key = tls_private_key.Key-syslog.public_key_openssh
+}
+
+output "syslog_private_key" {
+  value     = tls_private_key.Key-syslog.private_key_pem
+  sensitive = true
+}
+
