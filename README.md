@@ -26,3 +26,21 @@ Each region must meet the following criteria:
 3. Resources deployed in a **security zone** to facilitate syslog data transfer.
 4. **Port 80** (HTTP) must be open to the public.
 
+---
+
+### Diagram
+
+---
+![Hungry Wolves Armageddon Diagram](https://github.com/user-attachments/assets/31bcad3b-4a02-4bcb-b67a-2ffb26891a2f)
+
+
+
+### Each Region Pinging Tokyo
+
+![Screenshot_2024-12-09_205840](https://github.com/user-attachments/assets/29449553-47bc-4a54-aba8-58da0da24f31)
+![Screenshot_2024-12-09_210221](https://github.com/user-attachments/assets/dafc19ee-a37d-4301-aa5a-f2c613ecdb6f)
+![Screenshot_2024-12-09_202043](https://github.com/user-attachments/assets/c28b88be-e477-431d-b5fe-a31bcdb4e40f)
+![Screenshot_2024-12-09_203548](https://github.com/user-attachments/assets/8acffcca-a162-4731-b6ed-73a04df1e252)
+![Screenshot_2024-12-09_204547](https://github.com/user-attachments/assets/f4cb3432-2175-4081-8d9d-9da8f57e4515)
+![Screenshot_2024-12-09_204956](https://github.com/user-attachments/assets/b9273983-1fe7-4522-88d0-365cefdc7d57)
+
