@@ -96,6 +96,19 @@ resource "aws_route_table_association" "private-ap-northeast-1c" {
   subnet_id      = aws_subnet.private-ap-northeast-1c.id
   route_table_id = aws_route_table.Tokyo-private-rtb.id
 }
+
+resource "aws_route_table_association" "private-ap-northeast-1d-SYS" {
+  provider       = aws.Tokyo
+  subnet_id      = aws_subnet.private-ap-northeast-1d-SYS.id
+  route_table_id = aws_route_table.Tokyo-private-rtb.id
+}
+
+resource "aws_route_table_association" "private-ap-northeast-1d-DB" {
+  provider       = aws.Tokyo
+  subnet_id      = aws_subnet.private-ap-northeast-1d-DB.id
+  route_table_id = aws_route_table.Tokyo-private-rtb.id
+}
+
 # public
 
 resource "aws_route_table_association" "public-ap-northeast-1a" {
