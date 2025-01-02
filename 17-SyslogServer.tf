@@ -34,8 +34,8 @@
 # provider "aws" {
 #   # Default region where syslog server is created.
 #   region = var.region
-#   access_key = "AKIAWHQBJFCCV5QC4JJO"
-#   secret_key = "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"
+#   access_key = ""
+#   secret_key = ""
 
 #   # Define allowed account IDs.
 #   #allowed_account_ids = [var.account_id]
