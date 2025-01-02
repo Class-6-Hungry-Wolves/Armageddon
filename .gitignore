@@ -4,3 +4,4 @@
 *.terraform.lock.hcl
 # Ignore Terraform directories
 .terraform 
+*.tfvars var.db_username = "tmmc_admin" var.db_password = "TMmc2024!SecureDB#1"   
