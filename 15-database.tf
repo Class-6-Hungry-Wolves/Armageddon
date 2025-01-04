@@ -1,27 +1,31 @@
 # DB Subnet Group
-resource "aws_db_subnet_group" "medical" {
-  provider    = aws.Tokyo
-  name        = "medical-subnet-group"
-  description = "DB subnet group for medical application"
-  subnet_ids  = [aws_subnet.private-ap-northeast-1d-DB.id]
+# resource "aws_db_subnet_group" "medical" {
+#   provider    = aws.Tokyo
+#   name        = "medical-subnet-group"
+#   description = "DB subnet group for medical application"
+#   subnet_ids  = [aws_subnet.private-ap-northeast-1d-DB.id]
 
-  tags = {
-    Name = "medical-db-subnet-group"
-  }
-}
+#   tags = {
+#     Name = "medical-db-subnet-group"
+#   }
+# }
 
 # Declare variables
-variable "db_username" {
-  description = "The master username for the database"
-  type        = string
-}
+# variable "db_username" {
+#   description = "The master username for the database"
+#   type        = string
+# }
 
-variable "db_password" {
-  description = "The master password for the database"
-  type        = string
-  sensitive   = true  # Sensitive data, so it won't be displayed in logs
-}
+# variable "db_password" {
+#   description = "The master password for the database"
+#   type        = string
+#   sensitive   = true  # Sensitive data, so it won't be displayed in logs
+# }
 
+locals {
+  db_username = "tmmc_admin"
+  db_password = "TMmc2024!SecureDB#1"
+}
 
 # Security Group for Database
 resource "aws_security_group" "db" {
@@ -31,10 +35,10 @@ resource "aws_security_group" "db" {
   vpc_id      = aws_vpc.TMMC-Tokyo.id
 
   ingress {
-    from_port       = 5432  # PostgreSQL port
-    to_port         = 5432
-    protocol        = "tcp"
-    cidr_blocks     = [aws_vpc.TMMC-Tokyo.cidr_block]
+    from_port   = 5432 # PostgreSQL port
+    to_port     = 5432
+    protocol    = "tcp"
+    cidr_blocks = [aws_vpc.TMMC-Tokyo.cidr_block]
   }
 
   egress {
@@ -61,6 +65,13 @@ resource "aws_kms_key" "db" {
   }
 }
 
+resource "aws_db_subnet_group" "medical_subnet_group" {
+  provider = aws.Tokyo
+  name     = "medical-subnet-group"
+  subnet_ids = [aws_subnet.private-ap-northeast-1d-DB.id, aws_subnet.private-ap-northeast-1a.id,
+  aws_subnet.private-ap-northeast-1c.id]
+}
+
 # Aurora Cluster
 resource "aws_rds_cluster" "medical" {
   provider                  = aws.Tokyo
@@ -68,21 +79,16 @@ resource "aws_rds_cluster" "medical" {
   engine                    = "aurora-postgresql"
   engine_version            = "13.7"
   database_name             = "medical_records"
-  master_username           = "var.db_username"
-  master_password           = "var.db_password"
+  master_username           = local.db_username
+  master_password           = local.db_password
   backup_retention_period   = 7
   preferred_backup_window   = "03:00-04:00"
-  db_subnet_group_name      = aws_db_subnet_group.medical.name
+  db_subnet_group_name      = aws_db_subnet_group.medical_subnet_group.name
   vpc_security_group_ids    = [aws_security_group.db.id]
   storage_encrypted         = true
   kms_key_id                = aws_kms_key.db.arn
   skip_final_snapshot       = false
   final_snapshot_identifier = "medical-final-snapshot"
-  
-  scaling_configuration {
-    min_capacity = 1
-    max_capacity = 16
-  }
 
   tags = {
     Name = "medical-aurora-cluster"
@@ -95,7 +101,7 @@ resource "aws_rds_cluster_instance" "medical" {
   count              = 2
   identifier         = "medical-instance-${count.index + 1}"
   cluster_identifier = aws_rds_cluster.medical.id
-  instance_class     = "db.serverless"
+  instance_class     = "db.r5.large"
   engine             = aws_rds_cluster.medical.engine
   engine_version     = aws_rds_cluster.medical.engine_version
 
