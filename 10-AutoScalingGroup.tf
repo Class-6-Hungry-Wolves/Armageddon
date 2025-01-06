@@ -509,10 +509,10 @@ resource "aws_autoscaling_group" "Syslog-ASG" {
   health_check_type         = "ELB"
   health_check_grace_period = 300
   force_delete              = true
-  target_group_arns         = [aws_lb_target_group.Tokyo-TG-80.arn]
+  target_group_arns         = [aws_lb_target_group.Syslog-TG-80.arn]
 
   launch_template {
-    id      = aws_launch_template.Tokyo-LT.id
+    id      = aws_launch_template.Syslog-LT.id
     version = "$Latest"
   }
 
@@ -550,9 +550,9 @@ resource "aws_autoscaling_group" "Syslog-ASG" {
 
 
 # Auto Scaling Policy
-resource "aws_autoscaling_policy" "Tokyo-Scaling-Policy" {
+resource "aws_autoscaling_policy" "Syslog-Scaling-Policy" {
   provider               = aws.Tokyo
-  name                   = "Tokyo-cpu-target"
+  name                   = "Syslog-cpu-target"
   autoscaling_group_name = aws_autoscaling_group.Syslog-ASG.name
 
   policy_type               = "TargetTrackingScaling"

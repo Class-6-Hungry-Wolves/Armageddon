@@ -17,7 +17,7 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "tokyo_vpc_attachment" {
   transit_gateway_default_route_table_propagation = false
   transit_gateway_id = aws_ec2_transit_gateway.Tokyo_TGW.id
   vpc_id             = aws_vpc.TMMC-Tokyo.id
-  subnet_ids         = [aws_subnet.private-ap-northeast-1a.id, aws_subnet.private-ap-northeast-1c.id]
+  subnet_ids         = [aws_subnet.private-ap-northeast-1a.id, aws_subnet.private-ap-northeast-1c.id, aws_subnet.private-ap-northeast-1d-SYS.id]
 
   tags = {
     Name = "Tokyo_VPC_Attachment"

@@ -200,3 +200,23 @@ resource "aws_lb_target_group" "New-York-TG-80" {
     Assignment  = "Armageddon"
   }
 }
+
+resource "aws_lb_target_group" "Syslog-TG-80" {
+  provider    = aws.Tokyo
+  name          = "Syslog-TG-80"
+  port          = 80
+  protocol      = "HTTP"
+  vpc_id        = aws_vpc.TMMC-Tokyo.id
+  target_type   = "instance"
+
+  health_check {
+    enabled             = true
+    interval            = 30
+    path                = "/"
+    protocol            = "HTTP"
+    healthy_threshold   = 5
+    unhealthy_threshold = 2
+    timeout             = 5
+    matcher             = "200"
+  }
+}
