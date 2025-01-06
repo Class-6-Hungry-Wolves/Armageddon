@@ -497,14 +497,15 @@ resource "aws_autoscaling_policy" "Tokyo-Scaling-Policy" {
 
 
 
-resource "aws_autoscaling_group" "Syslog-ASG" {
+resource "aws_autoscaling_group" "-ASG" {
   provider         = aws.Tokyo
-  name_prefix      = "Syslog-ASG"
+  name_prefix      = "Tokyo-ASG"
   min_size         = 2
   max_size         = 8
   desired_capacity = 4
   vpc_zone_identifier = [
-    aws_subnet.private-ap-northeast-1d-SYS.id
+    aws_subnet.private-ap-northeast-1a.id,
+    aws_subnet.private-ap-northeast-1c.id
   ]
   health_check_type         = "ELB"
   health_check_grace_period = 300
@@ -537,7 +538,7 @@ resource "aws_autoscaling_group" "Syslog-ASG" {
 
   tag {
     key                 = "Name"
-    value               = "Syslog-instance"
+    value               = "Tokyo-instance"
     propagate_at_launch = true
   }
 
@@ -553,7 +554,7 @@ resource "aws_autoscaling_group" "Syslog-ASG" {
 resource "aws_autoscaling_policy" "Tokyo-Scaling-Policy" {
   provider               = aws.Tokyo
   name                   = "Tokyo-cpu-target"
-  autoscaling_group_name = aws_autoscaling_group.Syslog-ASG.name
+  autoscaling_group_name = aws_autoscaling_group.Tokyo-ASG.name
 
   policy_type               = "TargetTrackingScaling"
   estimated_instance_warmup = 120

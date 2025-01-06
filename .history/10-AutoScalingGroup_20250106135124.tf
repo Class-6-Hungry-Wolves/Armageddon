@@ -433,7 +433,8 @@ resource "aws_autoscaling_group" "Tokyo-ASG" {
   desired_capacity = 4
   vpc_zone_identifier = [
     aws_subnet.private-ap-northeast-1a.id,
-    aws_subnet.private-ap-northeast-1c.id
+    aws_subnet.private-ap-northeast-1c.id,
+    aws_subnet.private-ap-northeast-1d-S
   ]
   health_check_type         = "ELB"
   health_check_grace_period = 300
@@ -483,77 +484,6 @@ resource "aws_autoscaling_policy" "Tokyo-Scaling-Policy" {
   provider               = aws.Tokyo
   name                   = "Tokyo-cpu-target"
   autoscaling_group_name = aws_autoscaling_group.Tokyo-ASG.name
-
-  policy_type               = "TargetTrackingScaling"
-  estimated_instance_warmup = 120
-
-  target_tracking_configuration {
-    predefined_metric_specification {
-      predefined_metric_type = "ASGAverageCPUUtilization"
-    }
-    target_value = 75.0
-  }
-}
-
-
-
-resource "aws_autoscaling_group" "Syslog-ASG" {
-  provider         = aws.Tokyo
-  name_prefix      = "Syslog-ASG"
-  min_size         = 2
-  max_size         = 8
-  desired_capacity = 4
-  vpc_zone_identifier = [
-    aws_subnet.private-ap-northeast-1d-SYS.id
-  ]
-  health_check_type         = "ELB"
-  health_check_grace_period = 300
-  force_delete              = true
-  target_group_arns         = [aws_lb_target_group.Tokyo-TG-80.arn]
-
-  launch_template {
-    id      = aws_launch_template.Tokyo-LT.id
-    version = "$Latest"
-  }
-
-  enabled_metrics = ["GroupMinSize", "GroupMaxSize", "GroupDesiredCapacity", "GroupInServiceInstances", "GroupTotalInstances"]
-
-  # Instance protection for launching
-  initial_lifecycle_hook {
-    name                  = "instance-protection-launch"
-    lifecycle_transition  = "autoscaling:EC2_INSTANCE_LAUNCHING"
-    default_result        = "CONTINUE"
-    heartbeat_timeout     = 60
-    notification_metadata = "{\"key\":\"value\"}"
-  }
-
-  # Instance protection for terminating
-  initial_lifecycle_hook {
-    name                 = "scale-in-protection"
-    lifecycle_transition = "autoscaling:EC2_INSTANCE_TERMINATING"
-    default_result       = "CONTINUE"
-    heartbeat_timeout    = 300
-  }
-
-  tag {
-    key                 = "Name"
-    value               = "Syslog-instance"
-    propagate_at_launch = true
-  }
-
-  tag {
-    key                 = "Environment"
-    value               = "Production"
-    propagate_at_launch = true
-  }
-}
-
-
-# Auto Scaling Policy
-resource "aws_autoscaling_policy" "Tokyo-Scaling-Policy" {
-  provider               = aws.Tokyo
-  name                   = "Tokyo-cpu-target"
-  autoscaling_group_name = aws_autoscaling_group.Syslog-ASG.name
 
   policy_type               = "TargetTrackingScaling"
   estimated_instance_warmup = 120

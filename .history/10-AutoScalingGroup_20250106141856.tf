@@ -537,7 +537,7 @@ resource "aws_autoscaling_group" "Syslog-ASG" {
 
   tag {
     key                 = "Name"
-    value               = "Syslog-instance"
+    value               = "Tokyo-instance"
     propagate_at_launch = true
   }
 

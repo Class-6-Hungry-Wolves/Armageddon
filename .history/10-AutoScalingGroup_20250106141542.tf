@@ -537,7 +537,7 @@ resource "aws_autoscaling_group" "Syslog-ASG" {
 
   tag {
     key                 = "Name"
-    value               = "Syslog-instance"
+    value               = "Tokyo-instance"
     propagate_at_launch = true
   }
 
@@ -553,7 +553,7 @@ resource "aws_autoscaling_group" "Syslog-ASG" {
 resource "aws_autoscaling_policy" "Tokyo-Scaling-Policy" {
   provider               = aws.Tokyo
   name                   = "Tokyo-cpu-target"
-  autoscaling_group_name = aws_autoscaling_group.Syslog-ASG.name
+  autoscaling_group_name = aws_autoscaling_group.Tokyo-ASG.name
 
   policy_type               = "TargetTrackingScaling"
   estimated_instance_warmup = 120
