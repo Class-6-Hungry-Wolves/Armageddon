@@ -31,7 +31,7 @@ Each region must meet the following criteria:
 ### Diagram
 
 ---
-![Hungry Wolves Armageddon Diagram](https://github.com/user-attachments/assets/31bcad3b-4a02-4bcb-b67a-2ffb26891a2f)
+![Hungry Wolves Armageddon Project Diagram new](https://github.com/user-attachments/assets/43618105-ffd7-40a4-98ac-66bf2ed6ec92)
 
 
 
