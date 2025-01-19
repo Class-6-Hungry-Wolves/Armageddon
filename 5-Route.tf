@@ -11,45 +11,45 @@ resource "aws_route_table" "Tokyo-private-rtb" {
 }
 
 resource "aws_route" "tokyo_to_hong_kong" {
-  provider = aws.Tokyo
-  route_table_id = aws_route_table.Tokyo-private-rtb.id
+  provider               = aws.Tokyo
+  route_table_id         = aws_route_table.Tokyo-private-rtb.id
   destination_cidr_block = aws_vpc.TMMC-Hong-Kong.cidr_block
-  transit_gateway_id = aws_ec2_transit_gateway.Tokyo_TGW.id
+  transit_gateway_id     = aws_ec2_transit_gateway.Tokyo_TGW.id
 }
 
 resource "aws_route" "tokyo_to_london" {
-  provider = aws.Tokyo 
-  route_table_id = aws_route_table.Tokyo-private-rtb.id
+  provider               = aws.Tokyo
+  route_table_id         = aws_route_table.Tokyo-private-rtb.id
   destination_cidr_block = aws_vpc.TMMC-London.cidr_block
-  transit_gateway_id = aws_ec2_transit_gateway.Tokyo_TGW.id
+  transit_gateway_id     = aws_ec2_transit_gateway.Tokyo_TGW.id
 }
 
 resource "aws_route" "tokyo_to_sao_paulo" {
-  provider = aws.Tokyo
-  route_table_id = aws_route_table.Tokyo-private-rtb.id
+  provider               = aws.Tokyo
+  route_table_id         = aws_route_table.Tokyo-private-rtb.id
   destination_cidr_block = aws_vpc.TMMC-Sao-Paulo.cidr_block
-  transit_gateway_id = aws_ec2_transit_gateway.Tokyo_TGW.id
+  transit_gateway_id     = aws_ec2_transit_gateway.Tokyo_TGW.id
 }
 
 resource "aws_route" "tokyo_to_california" {
-  provider = aws.Tokyo
-  route_table_id = aws_route_table.Tokyo-private-rtb.id
+  provider               = aws.Tokyo
+  route_table_id         = aws_route_table.Tokyo-private-rtb.id
   destination_cidr_block = aws_vpc.TMMC-California.cidr_block
-  transit_gateway_id = aws_ec2_transit_gateway.Tokyo_TGW.id
+  transit_gateway_id     = aws_ec2_transit_gateway.Tokyo_TGW.id
 }
 
 resource "aws_route" "tokyo_to_australia" {
-  provider = aws.Tokyo
-  route_table_id = aws_route_table.Tokyo-private-rtb.id
+  provider               = aws.Tokyo
+  route_table_id         = aws_route_table.Tokyo-private-rtb.id
   destination_cidr_block = aws_vpc.TMMC-Australia.cidr_block
-  transit_gateway_id = aws_ec2_transit_gateway.Tokyo_TGW.id
+  transit_gateway_id     = aws_ec2_transit_gateway.Tokyo_TGW.id
 }
 
 resource "aws_route" "tokyo_to_new_york" {
-  provider = aws.Tokyo
-  route_table_id = aws_route_table.Tokyo-private-rtb.id
+  provider               = aws.Tokyo
+  route_table_id         = aws_route_table.Tokyo-private-rtb.id
   destination_cidr_block = aws_vpc.TMMC-New-York.cidr_block
-  transit_gateway_id = aws_ec2_transit_gateway.Tokyo_TGW.id
+  transit_gateway_id     = aws_ec2_transit_gateway.Tokyo_TGW.id
 }
 # Tokyo
 # public
@@ -144,10 +144,10 @@ resource "aws_route_table" "Hong-Kong-private-rtb" {
 }
 
 resource "aws_route" "hong_kong_to_tokyo" {
-  provider = aws.Hong-Kong
-  route_table_id = aws_route_table.Hong-Kong-private-rtb.id
+  provider               = aws.Hong-Kong
+  route_table_id         = aws_route_table.Hong-Kong-private-rtb.id
   destination_cidr_block = aws_vpc.TMMC-Tokyo.cidr_block
-  transit_gateway_id = aws_ec2_transit_gateway.Hong_Kong_TGW.id
+  transit_gateway_id     = aws_ec2_transit_gateway.Hong_Kong_TGW.id
 }
 
 #Hong Kong
@@ -232,10 +232,10 @@ resource "aws_route_table" "London-private-rtb" {
 }
 
 resource "aws_route" "london_to_tokyo" {
-  provider = aws.London
-  route_table_id = aws_route_table.London-private-rtb.id
+  provider               = aws.London
+  route_table_id         = aws_route_table.London-private-rtb.id
   destination_cidr_block = aws_vpc.TMMC-Tokyo.cidr_block
-  transit_gateway_id = aws_ec2_transit_gateway.London_TGW.id
+  transit_gateway_id     = aws_ec2_transit_gateway.London_TGW.id
 }
 
 #London
@@ -325,10 +325,10 @@ resource "aws_route_table" "Sao-Paulo-private-rtb" {
 }
 
 resource "aws_route" "sao_paulo_to_tokyo" {
-  provider = aws.Sao-Paulo
-  route_table_id = aws_route_table.Sao-Paulo-private-rtb.id
+  provider               = aws.Sao-Paulo
+  route_table_id         = aws_route_table.Sao-Paulo-private-rtb.id
   destination_cidr_block = aws_vpc.TMMC-Tokyo.cidr_block
-  transit_gateway_id = aws_ec2_transit_gateway.Sao_Paulo_TGW.id
+  transit_gateway_id     = aws_ec2_transit_gateway.Sao_Paulo_TGW.id
 }
 #Sao-Paulo
 # Public
@@ -414,10 +414,10 @@ resource "aws_route_table" "California-private-rtb" {
 }
 
 resource "aws_route" "california_to_tokyo" {
-  provider = aws.California
-  route_table_id = aws_route_table.California-private-rtb.id
+  provider               = aws.California
+  route_table_id         = aws_route_table.California-private-rtb.id
   destination_cidr_block = aws_vpc.TMMC-Tokyo.cidr_block
-  transit_gateway_id = aws_ec2_transit_gateway.California_TGW.id
+  transit_gateway_id     = aws_ec2_transit_gateway.California_TGW.id
 }
 
 resource "aws_route_table" "California-public-rtb" {
@@ -494,10 +494,10 @@ resource "aws_route_table" "Australia-private-rtb" {
 }
 
 resource "aws_route" "australia_to_tokyo" {
-  provider = aws.Australia
-  route_table_id = aws_route_table.Australia-private-rtb.id
+  provider               = aws.Australia
+  route_table_id         = aws_route_table.Australia-private-rtb.id
   destination_cidr_block = aws_vpc.TMMC-Tokyo.cidr_block
-  transit_gateway_id = aws_ec2_transit_gateway.Australia_TGW.id
+  transit_gateway_id     = aws_ec2_transit_gateway.Australia_TGW.id
 }
 
 resource "aws_route_table" "Australia-public-rtb" {
@@ -578,10 +578,10 @@ resource "aws_route_table" "New-York-private-rtb" {
 
 
 resource "aws_route" "new_york_to_tokyo" {
-  provider = aws.New-York
-  route_table_id = aws_route_table.New-York-private-rtb.id
+  provider               = aws.New-York
+  route_table_id         = aws_route_table.New-York-private-rtb.id
   destination_cidr_block = aws_vpc.TMMC-Tokyo.cidr_block
-  transit_gateway_id = aws_ec2_transit_gateway.New_York_TGW.id
+  transit_gateway_id     = aws_ec2_transit_gateway.New_York_TGW.id
 }
 
 resource "aws_route_table" "New-York-public-rtb" {

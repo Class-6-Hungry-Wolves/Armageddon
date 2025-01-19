@@ -1,6 +1,6 @@
 # These are the 
 resource "aws_vpc" "TMMC-Tokyo" {
-  provider = aws.Tokyo
+  provider   = aws.Tokyo
   cidr_block = "10.80.0.0/16"
 
   tags = {
@@ -12,7 +12,7 @@ resource "aws_vpc" "TMMC-Tokyo" {
 }
 
 resource "aws_vpc" "TMMC-Hong-Kong" {
-  provider = aws.Hong-Kong
+  provider   = aws.Hong-Kong
   cidr_block = "10.81.0.0/16"
 
   tags = {
@@ -24,8 +24,8 @@ resource "aws_vpc" "TMMC-Hong-Kong" {
 }
 
 resource "aws_vpc" "TMMC-London" {
-  provider    = aws.London
-  cidr_block  = "10.82.0.0/16"
+  provider   = aws.London
+  cidr_block = "10.82.0.0/16"
 
   tags = {
     Name    = "TMMC-London"

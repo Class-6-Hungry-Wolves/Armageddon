@@ -13,48 +13,48 @@ terraform {
   }
   required_version = ">= 1.1.0"
 
-  cloud { 
-    
-    organization = "Hungry-Wolves" 
+  cloud {
 
-    workspaces { 
-      name = "Armageddon" 
-    } 
-  } 
+    organization = "Hungry-Wolves"
+
+    workspaces {
+      name = "Armageddon"
+    }
+  }
 }
 
 provider "aws" {
   region = "ap-northeast-1"
-  alias = "Tokyo"
+  alias  = "Tokyo"
 }
 
 provider "aws" {
   region = "ap-east-1"
-  alias = "Hong-Kong"
+  alias  = "Hong-Kong"
 }
 provider "aws" {
   region = "eu-west-2"
-  alias = "London"
+  alias  = "London"
 }
 
 provider "aws" {
   region = "sa-east-1"
-  alias = "Sao-Paulo"
+  alias  = "Sao-Paulo"
 }
 
 provider "aws" {
   region = "us-west-1"
-  alias = "California"
+  alias  = "California"
 }
 
 provider "aws" {
   region = "ap-southeast-2"
-  alias = "Australia"
+  alias  = "Australia"
 }
 
 provider "aws" {
   region = "us-east-1"
-  alias = "New-York"
+  alias  = "New-York"
 }
 terraform {
   required_providers {
