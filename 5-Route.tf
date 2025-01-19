@@ -73,7 +73,7 @@ resource "aws_route_table" "Tokyo-public-rtb" {
       transit_gateway_id         = ""
       vpc_endpoint_id            = ""
       vpc_peering_connection_id  = ""
-
+      core_network_arn           = ""
     },
   ]
 
@@ -172,6 +172,7 @@ resource "aws_route_table" "Hong-Kong-public-rtb" {
       transit_gateway_id         = ""
       vpc_endpoint_id            = ""
       vpc_peering_connection_id  = ""
+      core_network_arn           = ""
     },
   ]
 
@@ -260,6 +261,7 @@ resource "aws_route_table" "London-public-rtb" {
       transit_gateway_id         = ""
       vpc_endpoint_id            = ""
       vpc_peering_connection_id  = ""
+      core_network_arn           = ""
     },
   ]
 
@@ -352,6 +354,7 @@ resource "aws_route_table" "Sao-Paulo-public-rtb" {
       transit_gateway_id         = ""
       vpc_endpoint_id            = ""
       vpc_peering_connection_id  = ""
+      core_network_arn           = ""
     },
   ]
 
@@ -439,6 +442,7 @@ resource "aws_route_table" "California-public-rtb" {
       transit_gateway_id         = ""
       vpc_endpoint_id            = ""
       vpc_peering_connection_id  = ""
+      core_network_arn           = ""
     },
   ]
 
@@ -519,6 +523,7 @@ resource "aws_route_table" "Australia-public-rtb" {
       transit_gateway_id         = ""
       vpc_endpoint_id            = ""
       vpc_peering_connection_id  = ""
+      core_network_arn           = ""
     },
   ]
 
@@ -603,6 +608,7 @@ resource "aws_route_table" "New-York-public-rtb" {
       transit_gateway_id         = ""
       vpc_endpoint_id            = ""
       vpc_peering_connection_id  = ""
+      core_network_arn           = ""
     },
   ]
 
