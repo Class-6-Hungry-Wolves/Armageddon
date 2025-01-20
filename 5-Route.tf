@@ -59,9 +59,9 @@ resource "aws_route_table" "Tokyo-public-rtb" {
   vpc_id   = aws_vpc.TMMC-Tokyo.id
 
   route {
-      cidr_block                 = "0.0.0.0/0"
-      gateway_id                 = aws_internet_gateway.Tokyo-IG.id
-    }
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.Tokyo-IG.id
+  }
 
   tags = {
     Name = "TMMC-Tokyo-public"
@@ -144,9 +144,9 @@ resource "aws_route_table" "Hong-Kong-public-rtb" {
   vpc_id   = aws_vpc.TMMC-Hong-Kong.id
 
   route {
-      cidr_block                 = "0.0.0.0/0"
-      gateway_id                 = aws_internet_gateway.Hong-Kong-IG.id
-    }
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.Hong-Kong-IG.id
+  }
 
   tags = {
     Name = "Hong-Kong-public"
@@ -219,9 +219,9 @@ resource "aws_route_table" "London-public-rtb" {
   vpc_id   = aws_vpc.TMMC-London.id
 
   route {
-      cidr_block                 = "0.0.0.0/0"
-      gateway_id                 = aws_internet_gateway.London-IG.id
-    }
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.London-IG.id
+  }
 
   tags = {
     Name = "TMMC-London-public"
@@ -298,9 +298,9 @@ resource "aws_route_table" "Sao-Paulo-public-rtb" {
   vpc_id   = aws_vpc.TMMC-Sao-Paulo.id
 
   route {
-      cidr_block                 = "0.0.0.0/0"
-      gateway_id                 = aws_internet_gateway.Sao-Paulo-IG.id
-    }
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.Sao-Paulo-IG.id
+  }
 
   tags = {
     Name = "TMMC-Sao-Paulo-public"
@@ -372,9 +372,9 @@ resource "aws_route_table" "California-public-rtb" {
   vpc_id   = aws_vpc.TMMC-California.id
 
   route {
-      cidr_block                 = "0.0.0.0/0"
-      gateway_id                 = aws_internet_gateway.California-IG.id
-    }
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.California-IG.id
+  }
 
   tags = {
     Name = "TMMC-California-public"
@@ -439,9 +439,9 @@ resource "aws_route_table" "Australia-public-rtb" {
   vpc_id   = aws_vpc.TMMC-Australia.id
 
   route {
-      cidr_block                 = "0.0.0.0/0"
-      gateway_id                 = aws_internet_gateway.Australia-IG.id
-    }
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.Australia-IG.id
+  }
 
   tags = {
     Name = "TMMC-Australia-public"
@@ -510,9 +510,9 @@ resource "aws_route_table" "New-York-public-rtb" {
   vpc_id   = aws_vpc.TMMC-New-York.id
 
   route {
-      cidr_block                 = "0.0.0.0/0"
-      gateway_id                 = aws_internet_gateway.New-York-IG.id
-    }
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.New-York-IG.id
+  }
 
   tags = {
     Name = "TMMC-New-York-public"
