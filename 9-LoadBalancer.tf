@@ -112,7 +112,7 @@ resource "aws_lb" "hongkong_alb" {
 }
 
 resource "aws_lb" "california_alb" {
-  provider = aws.California
+  provider           = aws.California
   name               = "tmmc-telehealth-alb-california"
   internal           = false
   load_balancer_type = "application"

@@ -1,9 +1,9 @@
 # Hong Kong Launch Template
 
 resource "aws_launch_template" "Hong-Kong-LT" {
-  provider = aws.Hong-Kong
+  provider      = aws.Hong-Kong
   name_prefix   = "Hong-Kong-LT"
-  image_id      = "ami-06f707739f2271995"  
+  image_id      = "ami-06f707739f2271995"
   instance_type = "t3.micro"
 
   key_name = "Key-Hong-Kong"
@@ -59,11 +59,11 @@ resource "aws_launch_template" "Hong-Kong-LT" {
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Name    		= "Hong Kong LT"
-      Service 		= "Launch Template"
-      Owner   		= "Alex"
-      Team  		= "Hungry Wolves"
-	  Assignment	= "Armageddon"
+      Name       = "Hong Kong LT"
+      Service    = "Launch Template"
+      Owner      = "Alex"
+      Team       = "Hungry Wolves"
+      Assignment = "Armageddon"
     }
   }
 
@@ -75,9 +75,9 @@ resource "aws_launch_template" "Hong-Kong-LT" {
 # New York Launch Template
 
 resource "aws_launch_template" "New-York-LT" {
-  provider   = aws.New-York
+  provider      = aws.New-York
   name_prefix   = "New-York-LT"
-  image_id      = "ami-0453ec754f44f9a4a"  
+  image_id      = "ami-0453ec754f44f9a4a"
   instance_type = "t2.micro"
 
   key_name = "Key-New-York"
@@ -133,11 +133,11 @@ resource "aws_launch_template" "New-York-LT" {
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Name    		= "New York LT"
-      Service 		= "Launch Template"
-      Owner   		= "Alex"
-      Team  		= "Hungry Wolves"
-	  Assignment	= "Armageddon"
+      Name       = "New York LT"
+      Service    = "Launch Template"
+      Owner      = "Alex"
+      Team       = "Hungry Wolves"
+      Assignment = "Armageddon"
     }
   }
 
@@ -148,9 +148,9 @@ resource "aws_launch_template" "New-York-LT" {
 
 # London Launch Template
 resource "aws_launch_template" "London-LT" {
-  provider    = aws.London
+  provider      = aws.London
   name_prefix   = "London-LT"
-  image_id      = "ami-0c76bd4bd302b30ec"  
+  image_id      = "ami-0c76bd4bd302b30ec"
   instance_type = "t2.micro"
 
   key_name = "Key-London"
@@ -206,11 +206,11 @@ resource "aws_launch_template" "London-LT" {
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Name    		= "London LT"
-      Service 		= "Launch Template"
-      Owner   		= "Alex"
-      Team  		= "Hungry Wolves"
-	  Assignment	= "Armageddon"
+      Name       = "London LT"
+      Service    = "Launch Template"
+      Owner      = "Alex"
+      Team       = "Hungry Wolves"
+      Assignment = "Armageddon"
     }
   }
 
@@ -221,9 +221,9 @@ resource "aws_launch_template" "London-LT" {
 
 # Australia Launch Template
 resource "aws_launch_template" "Australia-LT" {
-  provider    = aws.Australia
+  provider      = aws.Australia
   name_prefix   = "Australia-LT"
-  image_id      = "ami-0146fc9ad419e2cfd"  
+  image_id      = "ami-0146fc9ad419e2cfd"
   instance_type = "t2.micro"
 
   key_name = "Key-Australia"
@@ -279,11 +279,11 @@ resource "aws_launch_template" "Australia-LT" {
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Name    		= "Australia-LT"
-      Service 		= "Launch Template"
-      Owner   		= "Alex"
-      Team  		= "Hungry Wolves"
-	  Assignment	= "Armageddon"
+      Name       = "Australia-LT"
+      Service    = "Launch Template"
+      Owner      = "Alex"
+      Team       = "Hungry Wolves"
+      Assignment = "Armageddon"
     }
   }
 
@@ -294,9 +294,9 @@ resource "aws_launch_template" "Australia-LT" {
 
 # California Launch Template
 resource "aws_launch_template" "California-LT" {
-  provider    = aws.California   
+  provider      = aws.California
   name_prefix   = "California-LT"
-  image_id      = "ami-038bba9a164eb3dc1"  
+  image_id      = "ami-038bba9a164eb3dc1"
   instance_type = "t2.micro"
 
   key_name = "Key-California"
@@ -352,11 +352,11 @@ resource "aws_launch_template" "California-LT" {
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Name    		= "California LT"
-      Service 		= "Launch Template"
-      Owner   		= "Alex"
-      Team  		= "Hungry Wolves"
-	  Assignment	= "Armageddon"
+      Name       = "California LT"
+      Service    = "Launch Template"
+      Owner      = "Alex"
+      Team       = "Hungry Wolves"
+      Assignment = "Armageddon"
     }
   }
 
@@ -367,9 +367,9 @@ resource "aws_launch_template" "California-LT" {
 
 # Sao Paulo Launch Template
 resource "aws_launch_template" "Sao-Paulo-LT" {
-  provider    = aws.Sao-Paulo
+  provider      = aws.Sao-Paulo
   name_prefix   = "Sao-Paulo-LT"
-  image_id      = "ami-0c820c196a818d66a"  
+  image_id      = "ami-0c820c196a818d66a"
   instance_type = "t2.micro"
 
   key_name = "Key-Sao-Paulo"
@@ -425,11 +425,11 @@ resource "aws_launch_template" "Sao-Paulo-LT" {
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Name    		= "Sao Paulo LT"
-      Service 		= "Launch Template"
-      Owner   		= "Alex"
-      Team  		= "Hungry Wolves"
-	  Assignment	= "Armageddon"
+      Name       = "Sao Paulo LT"
+      Service    = "Launch Template"
+      Owner      = "Alex"
+      Team       = "Hungry Wolves"
+      Assignment = "Armageddon"
     }
   }
 
@@ -440,9 +440,9 @@ resource "aws_launch_template" "Sao-Paulo-LT" {
 
 # Tokyo Launch Template
 resource "aws_launch_template" "Tokyo-LT" {
-  provider    = aws.Tokyo
+  provider      = aws.Tokyo
   name_prefix   = "Tokyo-LT"
-  image_id      = "ami-023ff3d4ab11b2525"  
+  image_id      = "ami-023ff3d4ab11b2525"
   instance_type = "t2.micro"
 
   key_name = "Key-Tokyo"
@@ -498,11 +498,11 @@ resource "aws_launch_template" "Tokyo-LT" {
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Name    		= "Tokyo LT"
-      Service 		= "Launch Template"
-      Owner   		= "Alex"
-      Team  		= "Hungry Wolves"
-	  Assignment	= "Armageddon"
+      Name       = "Tokyo LT"
+      Service    = "Launch Template"
+      Owner      = "Alex"
+      Team       = "Hungry Wolves"
+      Assignment = "Armageddon"
     }
   }
 
@@ -512,9 +512,9 @@ resource "aws_launch_template" "Tokyo-LT" {
 }
 
 resource "aws_launch_template" "Syslog-LT" {
-  provider    = aws.Tokyo
+  provider      = aws.Tokyo
   name_prefix   = "Syslog-LT"
-  image_id      = "ami-023ff3d4ab11b2525"  
+  image_id      = "ami-023ff3d4ab11b2525"
   instance_type = "t2.micro"
 
   key_name = "Key-Tokyo"
@@ -570,11 +570,11 @@ resource "aws_launch_template" "Syslog-LT" {
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Name    		= "Syslog LT"
-      Service 		= "Launch Template"
-      Owner   		= "Alex"
-      Team  		= "Hungry Wolves"
-	  Assignment	= "Armageddon"
+      Name       = "Syslog LT"
+      Service    = "Launch Template"
+      Owner      = "Alex"
+      Team       = "Hungry Wolves"
+      Assignment = "Armageddon"
     }
   }
 
