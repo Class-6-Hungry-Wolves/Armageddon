@@ -58,24 +58,10 @@ resource "aws_route_table" "Tokyo-public-rtb" {
   provider = aws.Tokyo
   vpc_id   = aws_vpc.TMMC-Tokyo.id
 
-  route = [
-    {
+  route {
       cidr_block                 = "0.0.0.0/0"
       gateway_id                 = aws_internet_gateway.Tokyo-IG.id
-      nat_gateway_id             = ""
-      carrier_gateway_id         = ""
-      destination_prefix_list_id = ""
-      egress_only_gateway_id     = ""
-      instance_id                = ""
-      ipv6_cidr_block            = ""
-      local_gateway_id           = ""
-      network_interface_id       = ""
-      transit_gateway_id         = ""
-      vpc_endpoint_id            = ""
-      vpc_peering_connection_id  = ""
-      core_network_arn           = ""
-    },
-  ]
+    }
 
   tags = {
     Name = "TMMC-Tokyo-public"
@@ -157,24 +143,10 @@ resource "aws_route_table" "Hong-Kong-public-rtb" {
   provider = aws.Hong-Kong
   vpc_id   = aws_vpc.TMMC-Hong-Kong.id
 
-  route = [
-    {
+  route {
       cidr_block                 = "0.0.0.0/0"
       gateway_id                 = aws_internet_gateway.Hong-Kong-IG.id
-      nat_gateway_id             = ""
-      carrier_gateway_id         = ""
-      destination_prefix_list_id = ""
-      egress_only_gateway_id     = ""
-      instance_id                = ""
-      ipv6_cidr_block            = ""
-      local_gateway_id           = ""
-      network_interface_id       = ""
-      transit_gateway_id         = ""
-      vpc_endpoint_id            = ""
-      vpc_peering_connection_id  = ""
-      core_network_arn           = ""
-    },
-  ]
+    }
 
   tags = {
     Name = "Hong-Kong-public"
@@ -246,24 +218,10 @@ resource "aws_route_table" "London-public-rtb" {
   provider = aws.London
   vpc_id   = aws_vpc.TMMC-London.id
 
-  route = [
-    {
+  route {
       cidr_block                 = "0.0.0.0/0"
       gateway_id                 = aws_internet_gateway.London-IG.id
-      nat_gateway_id             = ""
-      carrier_gateway_id         = ""
-      destination_prefix_list_id = ""
-      egress_only_gateway_id     = ""
-      instance_id                = ""
-      ipv6_cidr_block            = ""
-      local_gateway_id           = ""
-      network_interface_id       = ""
-      transit_gateway_id         = ""
-      vpc_endpoint_id            = ""
-      vpc_peering_connection_id  = ""
-      core_network_arn           = ""
-    },
-  ]
+    }
 
   tags = {
     Name = "TMMC-London-public"
@@ -339,24 +297,10 @@ resource "aws_route_table" "Sao-Paulo-public-rtb" {
   provider = aws.Sao-Paulo
   vpc_id   = aws_vpc.TMMC-Sao-Paulo.id
 
-  route = [
-    {
+  route {
       cidr_block                 = "0.0.0.0/0"
       gateway_id                 = aws_internet_gateway.Sao-Paulo-IG.id
-      nat_gateway_id             = ""
-      carrier_gateway_id         = ""
-      destination_prefix_list_id = ""
-      egress_only_gateway_id     = ""
-      instance_id                = ""
-      ipv6_cidr_block            = ""
-      local_gateway_id           = ""
-      network_interface_id       = ""
-      transit_gateway_id         = ""
-      vpc_endpoint_id            = ""
-      vpc_peering_connection_id  = ""
-      core_network_arn           = ""
-    },
-  ]
+    }
 
   tags = {
     Name = "TMMC-Sao-Paulo-public"
@@ -427,24 +371,10 @@ resource "aws_route_table" "California-public-rtb" {
   provider = aws.California
   vpc_id   = aws_vpc.TMMC-California.id
 
-  route = [
-    {
+  route {
       cidr_block                 = "0.0.0.0/0"
       gateway_id                 = aws_internet_gateway.California-IG.id
-      nat_gateway_id             = ""
-      carrier_gateway_id         = ""
-      destination_prefix_list_id = ""
-      egress_only_gateway_id     = ""
-      instance_id                = ""
-      ipv6_cidr_block            = ""
-      local_gateway_id           = ""
-      network_interface_id       = ""
-      transit_gateway_id         = ""
-      vpc_endpoint_id            = ""
-      vpc_peering_connection_id  = ""
-      core_network_arn           = ""
-    },
-  ]
+    }
 
   tags = {
     Name = "TMMC-California-public"
@@ -508,24 +438,10 @@ resource "aws_route_table" "Australia-public-rtb" {
   provider = aws.Australia
   vpc_id   = aws_vpc.TMMC-Australia.id
 
-  route = [
-    {
+  route {
       cidr_block                 = "0.0.0.0/0"
       gateway_id                 = aws_internet_gateway.Australia-IG.id
-      nat_gateway_id             = ""
-      carrier_gateway_id         = ""
-      destination_prefix_list_id = ""
-      egress_only_gateway_id     = ""
-      instance_id                = ""
-      ipv6_cidr_block            = ""
-      local_gateway_id           = ""
-      network_interface_id       = ""
-      transit_gateway_id         = ""
-      vpc_endpoint_id            = ""
-      vpc_peering_connection_id  = ""
-      core_network_arn           = ""
-    },
-  ]
+    }
 
   tags = {
     Name = "TMMC-Australia-public"
@@ -593,24 +509,10 @@ resource "aws_route_table" "New-York-public-rtb" {
   provider = aws.New-York
   vpc_id   = aws_vpc.TMMC-New-York.id
 
-  route = [
-    {
+  route {
       cidr_block                 = "0.0.0.0/0"
       gateway_id                 = aws_internet_gateway.New-York-IG.id
-      nat_gateway_id             = ""
-      carrier_gateway_id         = ""
-      destination_prefix_list_id = ""
-      egress_only_gateway_id     = ""
-      instance_id                = ""
-      ipv6_cidr_block            = ""
-      local_gateway_id           = ""
-      network_interface_id       = ""
-      transit_gateway_id         = ""
-      vpc_endpoint_id            = ""
-      vpc_peering_connection_id  = ""
-      core_network_arn           = ""
-    },
-  ]
+    }
 
   tags = {
     Name = "TMMC-New-York-public"
