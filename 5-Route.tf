@@ -385,7 +385,7 @@ resource "aws_route_table" "California-public-rtb" {
 # private
 resource "aws_route_table_association" "private-us-west-1a" {
   provider       = aws.California
-  subnet_id      = aws_subnet.private-us-west-1a.id
+  subnet_id      = aws_subnet.private-us-west-1c.id
   route_table_id = aws_route_table.California-private-rtb.id
 }
 
@@ -397,9 +397,9 @@ resource "aws_route_table_association" "private-us-west-1b" {
 
 #public
 
-resource "aws_route_table_association" "public-us-west-1a" {
+resource "aws_route_table_association" "public-us-west-1c" {
   provider       = aws.California
-  subnet_id      = aws_subnet.public-us-west-1a.id
+  subnet_id      = aws_subnet.public-us-west-1c.id
   route_table_id = aws_route_table.California-public-rtb.id
 }
 

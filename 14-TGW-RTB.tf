@@ -24,7 +24,8 @@ resource "aws_ec2_transit_gateway_route_table_association" "hong_kong_peering_as
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.hong_kong.id
 
   depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.hong_kong_to_tokyo
+    aws_ec2_transit_gateway_peering_attachment.hong_kong_to_tokyo,
+    aws_ec2_transit_gateway_peering_attachment_accepter.accept_Hong_Kong_to_tokyo
   ]
 }
 
@@ -76,7 +77,8 @@ resource "aws_ec2_transit_gateway_route_table_association" "tokyo_hong_kong_peer
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
 
   depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.hong_kong_to_tokyo
+    aws_ec2_transit_gateway_peering_attachment.hong_kong_to_tokyo,
+    aws_ec2_transit_gateway_peering_attachment_accepter.accept_Hong_Kong_to_tokyo
   ]
 }
 
@@ -86,7 +88,8 @@ resource "aws_ec2_transit_gateway_route_table_association" "tokyo_london_peering
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
 
   depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.London_to_tokyo
+    aws_ec2_transit_gateway_peering_attachment.London_to_tokyo,
+    aws_ec2_transit_gateway_peering_attachment_accepter.accept_London_to_tokyo
   ]
 }
 
@@ -96,7 +99,8 @@ resource "aws_ec2_transit_gateway_route_table_association" "tokyo_sao_paulo_peer
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
 
   depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.Sao_Paulo_to_tokyo
+    aws_ec2_transit_gateway_peering_attachment.Sao_Paulo_to_tokyo,
+    aws_ec2_transit_gateway_peering_attachment_accepter.accept_Sao_Paulo_to_tokyo
   ]
 }
 
@@ -106,7 +110,8 @@ resource "aws_ec2_transit_gateway_route_table_association" "tokyo_california_pee
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
 
   depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.California_to_tokyo
+    aws_ec2_transit_gateway_peering_attachment.California_to_tokyo,
+    aws_ec2_transit_gateway_peering_attachment_accepter.accept_California_to_tokyo
   ]
 }
 
@@ -116,7 +121,8 @@ resource "aws_ec2_transit_gateway_route_table_association" "tokyo_australia_peer
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
 
   depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.Australia_to_tokyo
+    aws_ec2_transit_gateway_peering_attachment.Australia_to_tokyo,
+    aws_ec2_transit_gateway_peering_attachment_accepter.accept_Australia_to_tokyo
   ]
 }
 
@@ -126,7 +132,8 @@ resource "aws_ec2_transit_gateway_route_table_association" "tokyo_new_york_peeri
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
 
   depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.New_York_to_tokyo
+    aws_ec2_transit_gateway_peering_attachment.New_York_to_tokyo,
+    aws_ec2_transit_gateway_peering_attachment_accepter.accept_New_York_to_tokyo
   ]
 }
 
