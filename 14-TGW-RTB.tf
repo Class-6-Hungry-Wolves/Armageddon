@@ -203,7 +203,7 @@ resource "aws_ec2_transit_gateway_route" "tokyo_to_australia_route" {
   transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.Australia_to_tokyo.id
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
   depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.Austrailia_to_tokyo,
+    aws_ec2_transit_gateway_peering_attachment.Australia_to_tokyo,
     aws_ec2_transit_gateway_route_table.tokyo
   ]
 }
