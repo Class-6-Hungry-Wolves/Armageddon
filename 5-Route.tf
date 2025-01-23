@@ -198,10 +198,6 @@ resource "aws_route_table" "London-private-rtb" {
     Name = "TMMC-London-private"
 
   }
-  depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.London_to_tokyo,
-    aws_ec2_transit_gateway_peering_attachment_accepter.accept_London_to_tokyo
-  ]
 }
 
 resource "aws_route" "london_to_tokyo" {
@@ -278,10 +274,6 @@ resource "aws_route_table" "Sao-Paulo-private-rtb" {
   tags = {
     Name = "TMMC-Sao-Paulo-private"
   }
-  depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.Sao_Paulo_to_tokyo,
-    aws_ec2_transit_gateway_peering_attachment_accepter.accept_Sao_Paulo_to_tokyo
-  ]
 }
 
 resource "aws_route" "sao_paulo_to_tokyo" {
@@ -354,10 +346,6 @@ resource "aws_route_table" "California-private-rtb" {
   tags = {
     Name = "TMMC-California-private"
   }
-  depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.California_to_tokyo,
-    aws_ec2_transit_gateway_peering_attachment_accepter.accept_California_to_tokyo
-  ]
 }
 
 resource "aws_route" "california_to_tokyo" {
@@ -421,10 +409,6 @@ resource "aws_route_table" "Australia-private-rtb" {
   tags = {
     Name = "TMMC-Australia-private"
   }
-  depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.Australia_to_tokyo,
-    aws_ec2_transit_gateway_peering_attachment_accepter.accept_Australia_to_tokyo
-  ]
 }
 
 resource "aws_route" "australia_to_tokyo" {
@@ -491,10 +475,6 @@ resource "aws_route_table" "New-York-private-rtb" {
   tags = {
     Name = "TMMC-New-York-private"
   }
-  depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.New_York_to_tokyo,
-    aws_ec2_transit_gateway_peering_attachment_accepter.accept_New_York_to_tokyo
-  ]
 }
 
 
