@@ -77,7 +77,7 @@ resource "aws_rds_cluster" "medical" {
   provider                  = aws.Tokyo
   cluster_identifier        = "medical-cluster"
   engine                    = "aurora-postgresql"
-  engine_version            = "13.7"
+  engine_version            = "11.9"
   database_name             = "medical_records"
   master_username           = local.db_username
   master_password           = local.db_password
