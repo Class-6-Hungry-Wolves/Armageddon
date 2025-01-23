@@ -173,14 +173,14 @@ resource "aws_ec2_transit_gateway_peering_attachment" "London_to_tokyo" {
 
 resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_london_to_tokyo" {
   provider                      = aws.Tokyo
-  transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.london_to_tokyo.id
+  transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.London_to_tokyo.id
 
   tags = {
     Name = "accept_london_to_tokyo"
   }
 
   depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.london_to_tokyo
+    aws_ec2_transit_gateway_peering_attachment.London_to_tokyo
   ]
 }
 
@@ -202,14 +202,14 @@ resource "aws_ec2_transit_gateway_peering_attachment" "Sao_Paulo_to_tokyo" {
 
 resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_sao_paulo_to_tokyo" {
   provider                      = aws.Tokyo
-  transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.sao_paulo_to_tokyo.id
+  transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.Sao_Paulo_to_tokyo.id
 
   tags = {
     Name = "accept_sao_paulo_to_tokyo"
   }
 
   depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.sao_paulo_to_tokyo
+    aws_ec2_transit_gateway_peering_attachment.Sao_Paulo_to_tokyo
   ]
 }
 
@@ -231,14 +231,14 @@ resource "aws_ec2_transit_gateway_peering_attachment" "California_to_tokyo" {
 
 resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_california_to_tokyo" {
   provider                      = aws.Tokyo
-  transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.california_to_tokyo.id
+  transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.California_to_tokyo.id
 
   tags = {
     Name = "accept_california_to_tokyo"
   }
 
   depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.california_to_tokyo
+    aws_ec2_transit_gateway_peering_attachment.California_to_tokyo
   ]
 }
 
@@ -260,14 +260,14 @@ resource "aws_ec2_transit_gateway_peering_attachment" "Australia_to_tokyo" {
 
 resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_australia_to_tokyo" {
   provider                      = aws.Tokyo
-  transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.australia_to_tokyo.id
+  transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.Australia_to_tokyo.id
 
   tags = {
     Name = "accept_australia_to_tokyo"
   }
 
   depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.australia_to_tokyo
+    aws_ec2_transit_gateway_peering_attachment.Australia_to_tokyo
   ]
 }
 
@@ -289,13 +289,13 @@ resource "aws_ec2_transit_gateway_peering_attachment" "New_York_to_tokyo" {
 
 resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_new_york_to_tokyo" {
   provider                      = aws.Tokyo
-  transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.new_york_to_tokyo.id
+  transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.New_York_to_tokyo.id
 
   tags = {
     Name = "accept_new_york_to_tokyo"
   }
 
   depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.new_york_to_tokyo
+    aws_ec2_transit_gateway_peering_attachment.New_York_to_tokyo
   ]
 }
