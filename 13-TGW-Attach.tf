@@ -77,7 +77,7 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "california_vpc_attachment" {
   transit_gateway_default_route_table_propagation = false
   transit_gateway_id                              = aws_ec2_transit_gateway.California_TGW.id
   vpc_id                                          = aws_vpc.TMMC-California.id
-  subnet_ids                                      = [aws_subnet.private-us-west-1a.id, aws_subnet.private-us-west-1b.id]
+  subnet_ids                                      = [aws_subnet.private-us-west-1c.id, aws_subnet.private-us-west-1b.id]
 
   tags = {
     Name = "California_VPC_Attachment"
