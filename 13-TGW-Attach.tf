@@ -151,7 +151,10 @@ resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_Hong_Kong
   }
 
   depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.hong_kong_to_tokyo
+    aws_ec2_transit_gateway.Hong_Kong_TGW,
+    aws_ec2_transit_gateway.Tokyo_TGW,
+    aws_vpc.TMMC-Hong-Kong,
+    aws_vpc.TMMC-Tokyo
   ]
 }
 
@@ -180,7 +183,10 @@ resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_London_to
   }
 
   depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.London_to_tokyo
+    aws_ec2_transit_gateway.London_TGW,
+    aws_ec2_transit_gateway.Tokyo_TGW,
+    aws_vpc.TMMC-London,
+    aws_vpc.TMMC-Tokyo
   ]
 }
 
@@ -209,7 +215,10 @@ resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_Sao_Paulo
   }
 
   depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.Sao_Paulo_to_tokyo
+    aws_ec2_transit_gateway.Sao_Paulo_TGW,
+    aws_ec2_transit_gateway.Tokyo_TGW,
+    aws_vpc.TMMC-Sao-Paulo,
+    aws_vpc.TMMC-Tokyo
   ]
 }
 
@@ -238,7 +247,10 @@ resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_Californi
   }
 
   depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.California_to_tokyo
+    aws_ec2_transit_gateway.California_TGW,
+    aws_ec2_transit_gateway.Tokyo_TGW,
+    aws_vpc.TMMC-California,
+    aws_vpc.TMMC-Tokyo
   ]
 }
 
@@ -267,7 +279,10 @@ resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_Australia
   }
 
   depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.Australia_to_tokyo
+    aws_ec2_transit_gateway.Australia_TGW,
+    aws_ec2_transit_gateway.Tokyo_TGW,
+    aws_vpc.TMMC-Australia,
+    aws_vpc.TMMC-Tokyo
   ]
 }
 
@@ -296,6 +311,9 @@ resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_New_York_
   }
 
   depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.New_York_to_tokyo
+    aws_ec2_transit_gateway.New_York_TGW,
+    aws_ec2_transit_gateway.Tokyo_TGW,
+    aws_vpc.TMMC-New-York,
+    aws_vpc.TMMC-Tokyo
   ]
 }
