@@ -287,35 +287,6 @@ resource "aws_ec2_transit_gateway_route_table_association" "sao_paulo_peering_as
   ]
 }
 
-resource "aws_ec2_transit_gateway_route_table" "sao_paulo" {
-  provider           = aws.Sao-Paulo
-  transit_gateway_id = aws_ec2_transit_gateway.Sao_Paulo_TGW.id
-
-  tags = {
-    Name = "Sao-Paulo-TGW-RTB"
-  }
-}
-
-resource "aws_ec2_transit_gateway_route_table_association" "sao_paulo_vpc_association" {
-  provider                       = aws.Sao-Paulo
-  transit_gateway_attachment_id  = aws_ec2_transit_gateway_vpc_attachment.sao_paulo_vpc_attachment.id
-  transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.sao_paulo.id
-
-  depends_on = [
-    aws_ec2_transit_gateway_vpc_attachment.sao_paulo_vpc_attachment
-  ]
-}
-
-resource "aws_ec2_transit_gateway_route_table_association" "sao_paulo_peering_association" {
-  provider                       = aws.Sao-Paulo
-  transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.Sao_Paulo_to_tokyo.id
-  transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.sao_paulo.id
-
-  depends_on = [
-    aws_ec2_transit_gateway_peering_attachment.Sao_Paulo_to_tokyo
-  ]
-}
-
 resource "aws_ec2_transit_gateway_route" "sao_paulo_local_vpc_route" {
   provider                       = aws.Sao-Paulo
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.sao_paulo.id
