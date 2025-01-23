@@ -142,7 +142,7 @@ resource "aws_ec2_transit_gateway_peering_attachment" "hong_kong_to_tokyo" {
   ]
 }
 
-resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_hong_kong_to_tokyo" {
+resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_Hong_Kong_to_tokyo" {
   provider                      = aws.Tokyo
   transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.hong_kong_to_tokyo.id
 
@@ -171,7 +171,7 @@ resource "aws_ec2_transit_gateway_peering_attachment" "London_to_tokyo" {
   ]
 }
 
-resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_london_to_tokyo" {
+resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_London_to_tokyo" {
   provider                      = aws.Tokyo
   transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.London_to_tokyo.id
 
@@ -200,7 +200,7 @@ resource "aws_ec2_transit_gateway_peering_attachment" "Sao_Paulo_to_tokyo" {
   ]
 }
 
-resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_sao_paulo_to_tokyo" {
+resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_Sao_Paulo_to_tokyo" {
   provider                      = aws.Tokyo
   transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.Sao_Paulo_to_tokyo.id
 
@@ -229,7 +229,7 @@ resource "aws_ec2_transit_gateway_peering_attachment" "California_to_tokyo" {
   ]
 }
 
-resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_california_to_tokyo" {
+resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_California_to_tokyo" {
   provider                      = aws.Tokyo
   transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.California_to_tokyo.id
 
@@ -258,7 +258,7 @@ resource "aws_ec2_transit_gateway_peering_attachment" "Australia_to_tokyo" {
   ]
 }
 
-resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_australia_to_tokyo" {
+resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_Australia_to_tokyo" {
   provider                      = aws.Tokyo
   transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.Australia_to_tokyo.id
 
@@ -287,7 +287,7 @@ resource "aws_ec2_transit_gateway_peering_attachment" "New_York_to_tokyo" {
   ]
 }
 
-resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_new_york_to_tokyo" {
+resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_New_York_to_tokyo" {
   provider                      = aws.Tokyo
   transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.New_York_to_tokyo.id
 
