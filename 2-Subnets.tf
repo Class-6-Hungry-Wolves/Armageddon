@@ -130,7 +130,7 @@ resource "aws_subnet" "public-us-west-1c" {
   provider                = aws.California
   vpc_id                  = aws_vpc.TMMC-California.id
   cidr_block              = "10.84.3.0/24"
-  availability_zone       = "us-west-1a"
+  availability_zone       = "us-west-1c"
   map_public_ip_on_launch = true
 
   tags = {
@@ -373,7 +373,7 @@ resource "aws_subnet" "private-us-west-1c" {
   provider          = aws.California
   vpc_id            = aws_vpc.TMMC-California.id
   cidr_block        = "10.84.13.0/24"
-  availability_zone = "us-west-1a"
+  availability_zone = "us-west-1c"
 
   tags = {
     Name    = "TMMC-California-private-1c"
