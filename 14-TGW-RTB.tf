@@ -153,10 +153,6 @@ resource "aws_ec2_transit_gateway_route" "tokyo_to_hong_kong_route" {
   destination_cidr_block         = aws_vpc.TMMC-Hong-Kong.cidr_block
   transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.hong_kong_to_tokyo.id
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
-
-  depends_on = [
-    aws_ec2_transit_gateway_route_table_association.tokyo_hong_kong_peering_association
-  ]
 }
 
 resource "aws_ec2_transit_gateway_route" "tokyo_to_london_route" {
@@ -164,10 +160,6 @@ resource "aws_ec2_transit_gateway_route" "tokyo_to_london_route" {
   destination_cidr_block         = aws_vpc.TMMC-London.cidr_block
   transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.London_to_tokyo.id
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
-
-  depends_on = [
-    aws_ec2_transit_gateway_route_table_association.tokyo_london_peering_association
-  ]
 }
 
 resource "aws_ec2_transit_gateway_route" "tokyo_to_sao_paulo_route" {
@@ -175,10 +167,6 @@ resource "aws_ec2_transit_gateway_route" "tokyo_to_sao_paulo_route" {
   destination_cidr_block         = aws_vpc.TMMC-Sao-Paulo.cidr_block
   transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.Sao_Paulo_to_tokyo.id
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
-
-  depends_on = [
-    aws_ec2_transit_gateway_route_table_association.tokyo_sao_paulo_peering_association
-  ]
 }
 
 resource "aws_ec2_transit_gateway_route" "tokyo_to_california_route" {
@@ -186,10 +174,6 @@ resource "aws_ec2_transit_gateway_route" "tokyo_to_california_route" {
   destination_cidr_block         = aws_vpc.TMMC-California.cidr_block
   transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.California_to_tokyo.id
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
-
-  depends_on = [
-    aws_ec2_transit_gateway_route_table_association.tokyo_california_peering_association
-  ]
 }
 
 resource "aws_ec2_transit_gateway_route" "tokyo_to_australia_route" {
@@ -197,10 +181,6 @@ resource "aws_ec2_transit_gateway_route" "tokyo_to_australia_route" {
   destination_cidr_block         = aws_vpc.TMMC-Australia.cidr_block
   transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.Australia_to_tokyo.id
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
-
-  depends_on = [
-    aws_ec2_transit_gateway_route_table_association.tokyo_australia_peering_association
-  ]
 }
 
 resource "aws_ec2_transit_gateway_route" "tokyo_to_new_york_route" {
@@ -208,10 +188,6 @@ resource "aws_ec2_transit_gateway_route" "tokyo_to_new_york_route" {
   destination_cidr_block         = aws_vpc.TMMC-New-York.cidr_block
   transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.New_York_to_tokyo.id
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo.id
-
-  depends_on = [
-    aws_ec2_transit_gateway_route_table_association.tokyo_new_york_peering_association
-  ]
 }
 
 resource "aws_ec2_transit_gateway_route_table" "london" {
@@ -261,10 +237,6 @@ resource "aws_ec2_transit_gateway_route" "london_to_tokyo_route" {
   destination_cidr_block         = aws_vpc.TMMC-Tokyo.cidr_block
   transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.London_to_tokyo.id
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.london.id
-
-  depends_on = [
-    aws_ec2_transit_gateway_route_table_association.london_peering_association
-  ]
 }
 
 resource "aws_ec2_transit_gateway_route_table" "sao_paulo" {
@@ -314,10 +286,6 @@ resource "aws_ec2_transit_gateway_route" "sao_paulo_to_tokyo_route" {
   destination_cidr_block         = aws_vpc.TMMC-Tokyo.cidr_block
   transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.Sao_Paulo_to_tokyo.id
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.sao_paulo.id
-
-  depends_on = [
-    aws_ec2_transit_gateway_route_table_association.sao_paulo_peering_association
-  ]
 }
 
 resource "aws_ec2_transit_gateway_route_table" "california" {
@@ -367,10 +335,6 @@ resource "aws_ec2_transit_gateway_route" "california_to_tokyo_route" {
   destination_cidr_block         = aws_vpc.TMMC-Tokyo.cidr_block
   transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.California_to_tokyo.id
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.california.id
-
-  depends_on = [
-    aws_ec2_transit_gateway_route_table_association.california_peering_association
-  ]
 }
 
 resource "aws_ec2_transit_gateway_route_table" "australia" {
@@ -420,10 +384,6 @@ resource "aws_ec2_transit_gateway_route" "australia_to_tokyo_route" {
   destination_cidr_block         = aws_vpc.TMMC-Tokyo.cidr_block
   transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.Australia_to_tokyo.id
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.australia.id
-
-  depends_on = [
-    aws_ec2_transit_gateway_route_table_association.australia_peering_association
-  ]
 }
 
 resource "aws_ec2_transit_gateway_route_table" "new_york" {
@@ -452,8 +412,8 @@ resource "aws_ec2_transit_gateway_route_table_association" "new_york_peering_ass
 
   depends_on = [
     aws_ec2_transit_gateway_peering_attachment.New_York_to_tokyo,
-    aws_ec2_transit_gateway_vpc_attachment.new_york_vpc_attachment,
-    aws_ec2_transit_gateway_vpc_attachment.tokyo_vpc_attachment
+    aws_ec2_transit_gateway_vpc_attachment.tokyo_vpc_attachment,
+    aws_ec2_transit_gateway_vpc_attachment.new_york_vpc_attachment
   ]
 }
 
@@ -473,8 +433,4 @@ resource "aws_ec2_transit_gateway_route" "new_york_to_tokyo_route" {
   destination_cidr_block         = aws_vpc.TMMC-Tokyo.cidr_block
   transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.New_York_to_tokyo.id
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.new_york.id
-
-  depends_on = [
-    aws_ec2_transit_gateway_route_table_association.new_york_peering_association
-  ]
 }
