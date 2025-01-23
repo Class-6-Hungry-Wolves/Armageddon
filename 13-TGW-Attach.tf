@@ -13,7 +13,9 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "hong_kong_vpc_attachment" {
 
   depends_on = [
     aws_ec2_transit_gateway.Hong_Kong_TGW,
-    aws_vpc.TMMC-Hong-Kong
+    aws_vpc.TMMC-Hong-Kong,
+    aws_subnet.private-ap-east-1a,
+    aws_subnet.private-ap-east-1b
   ]
 }
 
@@ -31,7 +33,9 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "tokyo_vpc_attachment" {
 
   depends_on = [
     aws_ec2_transit_gateway.Tokyo_TGW,
-    aws_vpc.TMMC-Tokyo
+    aws_vpc.TMMC-Tokyo,
+    aws_subnet.private-ap-northeast-1a,
+    aws_subnet.private-ap-northeast-1c
   ]
 }
 
@@ -49,7 +53,9 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "london_vpc_attachment" {
 
   depends_on = [
     aws_ec2_transit_gateway.London_TGW,
-    aws_vpc.TMMC-London
+    aws_vpc.TMMC-London,
+    aws_subnet.private-eu-west-2a,
+    aws_subnet.private-eu-west-2b
   ]
 }
 
@@ -67,7 +73,9 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "sao_paulo_vpc_attachment" {
 
   depends_on = [
     aws_ec2_transit_gateway.Sao_Paulo_TGW,
-    aws_vpc.TMMC-Sao-Paulo
+    aws_vpc.TMMC-Sao-Paulo,
+    aws_subnet.private-sa-east-1a,
+    aws_subnet.private-sa-east-1c
   ]
 }
 
@@ -85,7 +93,9 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "california_vpc_attachment" {
 
   depends_on = [
     aws_ec2_transit_gateway.California_TGW,
-    aws_vpc.TMMC-California
+    aws_vpc.TMMC-California,
+    aws_subnet.private-us-west-1c,
+    aws_subnet.private-us-west-1b
   ]
 }
 
@@ -103,7 +113,9 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "australia_vpc_attachment" {
 
   depends_on = [
     aws_ec2_transit_gateway.Australia_TGW,
-    aws_vpc.TMMC-Australia
+    aws_vpc.TMMC-Australia,
+    aws_subnet.private-ap-southeast-2a,
+    aws_subnet.private-ap-southeast-2b
   ]
 }
 
@@ -121,7 +133,9 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "new_york_vpc_attachment" {
 
   depends_on = [
     aws_ec2_transit_gateway.New_York_TGW,
-    aws_vpc.TMMC-New-York
+    aws_vpc.TMMC-New-York,
+    aws_subnet.private-us-east-1a,
+    aws_subnet.private-us-east-1b
   ]
 }
 
@@ -151,10 +165,7 @@ resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_Hong_Kong
   }
 
   depends_on = [
-    aws_ec2_transit_gateway.Hong_Kong_TGW,
-    aws_ec2_transit_gateway.Tokyo_TGW,
-    aws_vpc.TMMC-Hong-Kong,
-    aws_vpc.TMMC-Tokyo
+    aws_ec2_transit_gateway_peering_attachment.hong_kong_to_tokyo
   ]
 }
 
@@ -183,10 +194,7 @@ resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_London_to
   }
 
   depends_on = [
-    aws_ec2_transit_gateway.London_TGW,
-    aws_ec2_transit_gateway.Tokyo_TGW,
-    aws_vpc.TMMC-London,
-    aws_vpc.TMMC-Tokyo
+    aws_ec2_transit_gateway_peering_attachment.London_to_tokyo
   ]
 }
 
@@ -215,10 +223,7 @@ resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_Sao_Paulo
   }
 
   depends_on = [
-    aws_ec2_transit_gateway.Sao_Paulo_TGW,
-    aws_ec2_transit_gateway.Tokyo_TGW,
-    aws_vpc.TMMC-Sao-Paulo,
-    aws_vpc.TMMC-Tokyo
+    aws_ec2_transit_gateway_peering_attachment.Sao_Paulo_to_tokyo
   ]
 }
 
@@ -247,10 +252,7 @@ resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_Californi
   }
 
   depends_on = [
-    aws_ec2_transit_gateway.California_TGW,
-    aws_ec2_transit_gateway.Tokyo_TGW,
-    aws_vpc.TMMC-California,
-    aws_vpc.TMMC-Tokyo
+    aws_ec2_transit_gateway_peering_attachment.California_to_tokyo
   ]
 }
 
@@ -279,10 +281,7 @@ resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_Australia
   }
 
   depends_on = [
-    aws_ec2_transit_gateway.Australia_TGW,
-    aws_ec2_transit_gateway.Tokyo_TGW,
-    aws_vpc.TMMC-Australia,
-    aws_vpc.TMMC-Tokyo
+    aws_ec2_transit_gateway_peering_attachment.Australia_to_tokyo
   ]
 }
 
@@ -311,9 +310,6 @@ resource "aws_ec2_transit_gateway_peering_attachment_accepter" "accept_New_York_
   }
 
   depends_on = [
-    aws_ec2_transit_gateway.New_York_TGW,
-    aws_ec2_transit_gateway.Tokyo_TGW,
-    aws_vpc.TMMC-New-York,
-    aws_vpc.TMMC-Tokyo
+    aws_ec2_transit_gateway_peering_attachment.New_York_to_tokyo
   ]
 }
