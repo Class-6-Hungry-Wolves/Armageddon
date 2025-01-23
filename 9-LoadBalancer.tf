@@ -117,7 +117,7 @@ resource "aws_lb" "california_alb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.TMMC-California-sg02-LB.id]
-  subnets            = [aws_subnet.public-us-west-1a.id, aws_subnet.public-us-west-1b.id]
+  subnets            = [aws_subnet.public-us-west-1c.id, aws_subnet.public-us-west-1b.id]
 
   enable_deletion_protection = false
 
