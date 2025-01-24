@@ -33,7 +33,12 @@ Each region must meet the following criteria:
 ---
 ![Hungry Wolves Armageddon Project Diagram new](https://github.com/user-attachments/assets/43618105-ffd7-40a4-98ac-66bf2ed6ec92)
 
+## Pipeline with GitHub Actions and Terraform
 
+![image](https://github.com/user-attachments/assets/b3afc944-03d3-4e44-a0ba-9200bbac6935)
+![image](https://github.com/user-attachments/assets/7219c5e7-6e20-40e9-aa34-5e0952c9b677)
+
+---
 
 ### Each Region Pinging Tokyo
 
